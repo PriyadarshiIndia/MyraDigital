@@ -91,11 +91,6 @@ export const Footer = () => {
             <p className="text-gray-400 text-sm">
               © 2024 Myra Digital India. All rights reserved.
             </p>
-            <div className="mt-4 md:mt-0">
-              <p className="text-gray-400 text-sm">
-                Designed & Developed by <a href="#" className="text-blue-400 hover:text-blue-300">Webpulse</a>
-              </p>
-            </div>
           </div>
         </div>
       </div>
