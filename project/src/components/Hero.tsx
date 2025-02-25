@@ -1,77 +1,63 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
-const Hero = () => {
+export const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    'https://m.media-amazon.com/images/I/51vZQIsS4KL.jpg',
+    'https://m.media-amazon.com/images/I/51FJTKKTr-L.jpg',
+    'https://m.media-amazon.com/images/I/41NmJg+hDdL._SX522_.jpg',
+    'https://rukminim2.flixcart.com/image/832/832/xif0q/battery-charger/z/g/f/25-w-quick-charge-3-1-a-mobile-charger-white-nexcen-original-imagxg8uexuz9mug.jpeg?q=70&crop=false'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="bg-neutral-900 py-20 min-h-screen flex items-center">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate__animated animate__fadeInLeft">
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-              Smart Solutions for 
-              <span className="text-[#4A90E2]"> Modern Technology</span>
+    <section id="hero" className="pt-20  md:pt-24 bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-[70vh]">
+      <div className="mx-4">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6 animate__animated animate__fadeInLeft">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Smart Accessories for a Smarter Life
             </h1>
-            
-            <p className="text-gray-300 text-lg md:text-xl">
-              Discover our premium collection of smart accessories, from high-speed charging solutions to professional-grade equipment.
+            <p className="text-xl text-blue-100">
+              Leading Mobile Charger & Accessories Manufacturer in Delhi. Quality products at competitive prices.
             </p>
-            
             <div className="flex flex-wrap gap-4">
-              <button className="bg-[#4A90E2] hover:bg-[#50C5B7] text-white px-8 py-4 rounded-lg transition-all duration-300 flex items-center space-x-2 animate__animated animate__pulse animate__infinite">
-                <span>Explore Products</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              
-              <button className="border-2 border-[#4A90E2] text-white px-8 py-4 rounded-lg hover:bg-[#4A90E2] transition-all duration-300">
-                Contact Sales
-              </button>
-            </div>
-            
-            <div className="flex items-center gap-8 pt-8">
-              <div className="text-center">
-                <h3 className="text-[#50C5B7] text-3xl font-bold">500+</h3>
-                <p className="text-gray-400">Products</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-[#50C5B7] text-3xl font-bold">24/7</h3>
-                <p className="text-gray-400">Support</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-[#50C5B7] text-3xl font-bold">100%</h3>
-                <p className="text-gray-400">Satisfaction</p>
-              </div>
+              <a href="#products" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+                Shop Now
+              </a>
+              <a href="#contact" className="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                Contact Us
+              </a>
             </div>
           </div>
-          
-          <div className="relative animate__animated animate__fadeInRight">
-            <div className="bg-gradient-to-r from-[#4A90E2]/20 to-[#50C5B7]/20 rounded-2xl p-8">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-neutral-800 rounded-lg p-4 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="h-32 bg-neutral-700 rounded-lg mb-4"></div>
-                  <h3 className="text-white text-lg font-semibold">Smart Chargers</h3>
-                </div>
-                <div className="bg-neutral-800 rounded-lg p-4 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="h-32 bg-neutral-700 rounded-lg mb-4"></div>
-                  <h3 className="text-white text-lg font-semibold">Projectors</h3>
-                </div>
-                <div className="bg-neutral-800 rounded-lg p-4 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="h-32 bg-neutral-700 rounded-lg mb-4"></div>
-                  <h3 className="text-white text-lg font-semibold">Cables</h3>
-                </div>
-                <div className="bg-neutral-800 rounded-lg p-4 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="h-32 bg-neutral-700 rounded-lg mb-4"></div>
-                  <h3 className="text-white text-lg font-semibold">Accessories</h3>
-                </div>
+
+          <div className="relative animate__animated animate__fadeInRight w-full">
+            <div className="carousel relative overflow-hidden rounded-lg shadow-xl w-full">
+              <div 
+                className="carousel-inner flex transition-transform duration-500 w-full"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {slides.map((slide, index) => (
+                  <img 
+                    key={index}
+                    src={slide} 
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-[400px] object-cover flex-shrink-0"
+                  />
+                ))}
               </div>
             </div>
-            
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#50C5B7] rounded-full blur-2xl opacity-20"></div>
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#4A90E2] rounded-full blur-2xl opacity-20"></div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
 };
-
-export default Hero;
