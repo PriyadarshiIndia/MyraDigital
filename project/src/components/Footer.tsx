@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 py-12">
           <div className="space-y-4">
             <img 
-              src="https://www.punnkkonline.com/cdn/shop/files/WhatsApp_Image_2025-02-20_at_16.41.42-Photoroom.png?v=1740139194&width=150" 
+              src="https://media.licdn.com/dms/image/v2/C4E0BAQEpgVuSiqrjPw/company-logo_200_200/company-logo_200_200/0/1630641630431?e=1748476800&v=beta&t=WhKNl1ttxc1SV3ab2nRAXuBO89-1e80WG9SGr_U9G8s" 
               alt="Bright Industries Logo" 
               className="h-16"
             />
@@ -76,7 +76,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center text-gray-400">
                 <Mail className="w-5 h-5 mr-2" />
-                info@brightcharger.in
+                info@myra-digital.com
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="w-5 h-5 mr-2" />
@@ -89,7 +89,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Bright Industries. All rights reserved.
+              © 2024 Myra Digital India. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-gray-400 text-sm">

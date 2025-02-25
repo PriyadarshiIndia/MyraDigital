@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 export const SpecialOffers = () => {
   const offers = [
     {
-      image: "/public/c-2-c.jpg",
+      image: "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1726125018/Croma%20Assets/Communication/Cables%20and%20Connectors/Images/310898_jnyria.png",
       name: "Type-C Cable Bundle",
       description: "Get 3 premium Type-C cables at the price of 2",
       currentPrice: "₹599",
@@ -83,7 +83,7 @@ export const SpecialOffers = () => {
                   <img 
                     src={offer.image} 
                     alt={offer.name} 
-                    className="w-full h-48 object-cover rounded-lg mb-4"
+                    className="w-full h-48 object-cover bg-white rounded-lg mb-4"
                   />
                   <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {offer.discount}

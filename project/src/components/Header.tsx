@@ -18,7 +18,7 @@ export const Header = () => {
     <header className={`fixed w-full top-0 z-50 bg-white transition-shadow ${isScrolled ? 'shadow-lg' : 'shadow-md'}`}>
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <a href="/" className="flex items-center">
-          <img src="https://www.punnkkonline.com/cdn/shop/files/WhatsApp_Image_2025-02-20_at_16.41.42-Photoroom.png?v=1740139194&width=150" alt="Bright Industries Logo" className="h-12" />
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEpgVuSiqrjPw/company-logo_200_200/company-logo_200_200/0/1630641630431?e=1748476800&v=beta&t=WhKNl1ttxc1SV3ab2nRAXuBO89-1e80WG9SGr_U9G8s" alt="Bright Industries Logo" className="h-12" />
         </a>
 
         <div className="hidden md:flex space-x-6">
