@@ -12,21 +12,21 @@ export const SpecialOffers = () => {
       duration: 24 // hours
     },
     {
-      image: "",
+      image: "https://m.media-amazon.com/images/I/414YgA-2VlL._SX522_.jpg",
       name: "Projectors",
-      description: "High-quality sound with extra bass effect",
-      currentPrice: "₹799",
-      originalPrice: "₹999",
-      discount: "25% OFF",
+      description: "High-quality visuals and audio",
+      currentPrice: "₹6000",
+      originalPrice: "₹10000",
+      discount: "40% OFF",
       duration: 48
     },
     {
-      image: "",
-      name: "Fast Charger Combo",
-      description: "Charger + Cable + Free Power Bank",
-      currentPrice: "₹999",
-      originalPrice: "₹1299",
-      discount: "20% OFF",
+      image: "https://m.media-amazon.com/images/I/51HYLMyjfUL._SX679_.jpg",
+      name: "20 Watt Charger",
+      description: "Charger",
+      currentPrice: "₹350",
+      originalPrice: "₹500",
+      discount: "30% OFF",
       duration: 72
     }
   ];

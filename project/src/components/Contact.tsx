@@ -24,11 +24,11 @@ export const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-blue-600" />
-                  <p className="ml-4 text-gray-600">+91 1234567890</p>
+                  <p className="ml-4 text-gray-600">+91 </p>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-blue-600" />
-                  <p className="ml-4 text-gray-600">info@brightcharger.in</p>
+                  <p className="ml-4 text-gray-600">info@myra-digital.com</p>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-6 h-6 text-blue-600" />
@@ -38,7 +38,7 @@ export const Contact = () => {
 
               <div className="mt-8">
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">Business Hours</h4>
-                <p className="text-gray-600">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                <p className="text-gray-600">Monday - Saturday: 9:30 AM - 6:00 PM</p>
                 <p className="text-gray-600">Sunday: Closed</p>
               </div>
             </div>
