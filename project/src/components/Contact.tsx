@@ -54,7 +54,7 @@ export const Contact = () => {
 
           <div className="bg-gray-50 p-8 rounded-lg shadow-sm animate__animated animate__fadeInRight">
             <h3 className="text-xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
-            <form action="https://formsubmit.co/adarshkumar612.2001@gmail.com" method="POST" className="space-y-4">
+            <form action="https://formsubmit.co/adarshkumar.anand06@gmail.com" method="POST" className="space-y-4">
               <div>
                 <label className="block text-gray-700 mb-2" htmlFor="name">Full Name</label>
                 <input 
