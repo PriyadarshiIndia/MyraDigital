@@ -54,12 +54,13 @@ export const Contact = () => {
 
           <div className="bg-gray-50 p-8 rounded-lg shadow-sm animate__animated animate__fadeInRight">
             <h3 className="text-xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action="https://formsubmit.co/adarshkumar612.2001@gmail.com" method="POST" className="space-y-4">
               <div>
                 <label className="block text-gray-700 mb-2" htmlFor="name">Full Name</label>
                 <input 
                   type="text" 
-                  id="name" 
+                  id="name"
+                  name='name'
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   required 
                 />
@@ -68,7 +69,8 @@ export const Contact = () => {
                 <label className="block text-gray-700 mb-2" htmlFor="email">Email Address</label>
                 <input 
                   type="email" 
-                  id="email" 
+                  id="email"
+                  name='email'
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   required 
                 />
@@ -78,6 +80,7 @@ export const Contact = () => {
                 <input 
                   type="tel" 
                   id="phone" 
+                  name='phone'
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   required 
                 />
@@ -87,10 +90,14 @@ export const Contact = () => {
                 <textarea 
                   id="message" 
                   rows={4} 
+                  name='message'
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   required 
                 />
               </div>
+              <input type="hidden" name="_cc" value="info.myra-digital.com"></input>
+              <input type="hidden" name="_captcha" value="false"></input>
+              <input type="hidden" name="_template" value="box"></input>
               <button 
                 type="submit" 
                 className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
