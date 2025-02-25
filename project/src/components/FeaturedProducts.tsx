@@ -3,25 +3,25 @@ import React from 'react';
 export const FeaturedProducts = () => {
   const products = [
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/5%20pin%20charger12_03.jpg",
+      image: "/public/2.jpg",  // Image from public directory
       name: "5 Pin Charger",
       description: "Fast charging compatible mobile charger with protection features"
     },
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/DC%202%204%20AMP%20USB%20charger%20CH-0801_15.jpg",
+      image: "/public/11.jpg",
       name: "DC 2.4 AMP USB Charger",
       description: "High-performance USB charger with rapid charging technology"
     },
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/Type%20C%20Cable%203%201%20A44_43.jpg",
+      image: "/public/12.jpg",
       name: "Type C Cable 3.1A",
       description: "Premium quality Type-C cable for fast data transfer and charging"
     },
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/Universal%20Super%20Bass%20BH-10247_03.jpg",
+      image: "/public/14.jpg",
       name: "Universal Super Bass BH-102",
       description: "High-quality audio experience with deep bass response"
-    }
+    },
   ];
 
   return (

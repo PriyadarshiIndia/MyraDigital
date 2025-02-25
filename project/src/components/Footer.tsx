@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 py-12">
           <div className="space-y-4">
             <img 
-              src="https://brightcharger.in/img/logo.png" 
+              src="https://www.punnkkonline.com/cdn/shop/files/WhatsApp_Image_2025-02-20_at_16.41.42-Photoroom.png?v=1740139194&width=150" 
               alt="Bright Industries Logo" 
               className="h-16"
             />

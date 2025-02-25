@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 export const SpecialOffers = () => {
   const offers = [
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/Type%20C%20Cable%203%201%20A44_43.jpg",
+      image: "/public/c-2-c.jpg",
       name: "Type-C Cable Bundle",
       description: "Get 3 premium Type-C cables at the price of 2",
       currentPrice: "₹599",
@@ -12,8 +12,8 @@ export const SpecialOffers = () => {
       duration: 24 // hours
     },
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/Universal%20Super%20Bass%20BH-10247_03.jpg",
-      name: "Premium Headphones",
+      image: "",
+      name: "Projectors",
       description: "High-quality sound with extra bass effect",
       currentPrice: "₹799",
       originalPrice: "₹999",
@@ -21,7 +21,7 @@ export const SpecialOffers = () => {
       duration: 48
     },
     {
-      image: "https://brightcharger.in/uploaded_files/product_images/thumbs/5%20pin%20charger12_03.jpg",
+      image: "",
       name: "Fast Charger Combo",
       description: "Charger + Cable + Free Power Bank",
       currentPrice: "₹999",
