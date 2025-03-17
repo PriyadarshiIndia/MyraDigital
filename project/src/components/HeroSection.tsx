@@ -7,38 +7,43 @@ export default function HeroSection() {
   const slides = [
     {
       backgroundImage: "url('/img/slide-1.jpg')",
-      title: "Premium Collection",
-      description: "Explore our curated selection of high-quality products",
-      buttonText: "Shop Now",
+      title: "Empower Your Devices with Premium Accessories",
+      description:
+        "We specialize in crafting high-quality mobile accessories designed to meet the unique needs of OEMs. Elevate your product offerings with our innovative solutions.",
+      buttonText: "Explore Our Catalog",
       link: "/products",
     },
     {
       backgroundImage: "url('/img/slide-2.png')",
-      title: "Summer Fashion",
-      description: "Explore our latest collection of summer outfits",
-      buttonText: "View Collection",
-      link: "/summer-collection",
+      title: "Tailored Solutions for Every OEM Partner",
+      description:
+        "From custom-branded chargers to bespoke packaging, we deliver scalable accessory solutions tailored to your business requirements.",
+      buttonText: "Learn About Customization",
+      link: "/custom-solutions",
     },
     {
       backgroundImage: "url('/img/slide-3.jpg')",
-      title: "Tech Essentials",
-      description: "Discover the perfect gadgets for your needs",
-      buttonText: "Browse Gadgets",
-      link: "/gadgets",
+      title: "Stay Ahead with Advanced Accessories",
+      description:
+        "Our cutting-edge technology ensures compatibility, durability, and performance. Partner with us to integrate the latest innovations into your lineup.",
+      buttonText: "Discover Our Tech",
+      link: "/technology",
     },
     {
       backgroundImage: "url('/img/slide-4.jpg')",
-      title: "Travel Deals",
-      description: "Plan your dream vacation with exclusive deals",
-      buttonText: "Explore Deals",
-      link: "/travel-deals",
+      title: "Serving OEMs Worldwide with Reliable Supply Chains",
+      description:
+        "With manufacturing hubs across the globe and localized support, we ensure timely delivery and exceptional service wherever you operate.",
+      buttonText: "View Our Network",
+      link: "/global-network",
     },
     {
       backgroundImage: "url('/img/slide-5.jpg')",
-      title: "Smart Home",
-      description: "Upgrade your home with smart essentials",
-      buttonText: "Discover Solutions",
-      link: "/smart-home",
+      title: "Building Long-Term Partnerships for Success",
+      description:
+        "More than just suppliers, we are your trusted partners in innovation. Together, let’s create impactful products that drive growth.",
+      buttonText: "Start a Partnership",
+      link: "/contact-us",
     },
   ];
 

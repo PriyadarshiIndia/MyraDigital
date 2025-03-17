@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const serverless = require("serverless-http"); // For serverless compatibility
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
@@ -40,15 +40,15 @@ app.post("/api/enquiries", async (req, res) => {
   }
 });
 
+// API Route to Fetch All Enquiries
 app.get("/api/enquiries", async (req, res) => {
-    try {
-      const enquiries = await Enquiry.find().sort({ createdAt: -1 }); // Get all enquiries, sorted by date
-      res.json(enquiries);
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch enquiries" });
-    }
-  });
-  
+  try {
+    const enquiries = await Enquiry.find().sort({ createdAt: -1 }); // Get all enquiries, sorted by date
+    res.json(enquiries);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch enquiries" });
+  }
+});
 
-// Start Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export the app for Vercel
+module.exports.handler = serverless(app);
