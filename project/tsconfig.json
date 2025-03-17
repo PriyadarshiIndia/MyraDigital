@@ -3,5 +3,16 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ES6",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "allowJs": true // Allows importing JavaScript files
+  }
+  
 }
+

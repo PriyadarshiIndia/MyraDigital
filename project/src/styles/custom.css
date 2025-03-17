@@ -1,0 +1,24 @@
+/* Custom CSS styles */
+.custom-button {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

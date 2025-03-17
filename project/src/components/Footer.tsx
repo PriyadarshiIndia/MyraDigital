@@ -1,99 +1,156 @@
-import React from 'react';
-import { Facebook, Twitter, Instagram, MapPin, Mail, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Youtube, Send } from "lucide-react"
 
-export const Footer = () => {
+export default function Footer() {
   return (
-    <footer id="footer" className="bg-neutral-900 text-white">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 py-12">
-          <div className="space-y-4">
-            <img 
-              src="https://media.licdn.com/dms/image/v2/C4E0BAQEpgVuSiqrjPw/company-logo_200_200/company-logo_200_200/0/1630641630431?e=1748476800&v=beta&t=WhKNl1ttxc1SV3ab2nRAXuBO89-1e80WG9SGr_U9G8s" 
-              alt="Bright Industries Logo" 
-              className="h-16"
-            />
-            <p className="text-gray-400">
-              Leading manufacturer of mobile accessories in Delhi, providing quality products across India.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="w-6 h-6" />
-              </a>
+    <section>
+      <div className="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
+          {/* Logo and Social Media Column */}
+          <div className="flex flex-col flex-shrink-0">
+            <div className="dark:text-dark">
+              <img
+                src="public\img\logo.png"
+                alt="Logo"
+                className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <p className="text-sm leading-none text-gray-800 mt-4 dark:text-dark">Copyright © 2021 Myra Digital India</p>
+            <p className="text-sm leading-none text-gray-800 mt-4 dark:text-dark">All rights reserved</p>
+            <div className="flex items-center gap-x-4 mt-12">
+              <button
+                aria-label="instagram"
+                className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center"
+                onClick={() => window.open("https://www.instagram.com/myradigital.india/", "_blank")}
+              >
+                <Instagram size={18} color="white" />
+              </button>
+
+              <button
+                aria-label="linked-in"
+                className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center"
+              >
+                <Linkedin size={18} color="white" />
+              </button>
+              <button
+                aria-label="twitter"
+                className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center"
+              >
+                <Twitter size={16} color="white" />
+              </button>
+              <button
+                aria-label="youtube"
+                className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center"
+              >
+                <Youtube size={18} color="white" />
+              </button>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {[
-                'About Us',
-                'Privacy Policy',
-                'Terms & Conditions',
-                'Shipping Policy',
-                'Return Policy',
-                'Contact Us'
-              ].map((link, index) => (
-                <li key={index}>
-                  <a href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-gray-400 hover:text-white transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Company Links Column */}
+          <div className="sm:ml-0 ml-8 flex flex-col">
+            <h2 className="text-base font-semibold leading-4 text-dark text-dark">Company</h2>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark text-dark cursor-pointer"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark text-dark cursor-pointer"
+            >
+              Pricing
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark text-dark cursor-pointer"
+            >
+              About Us
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark text-dark cursor-pointer"
+            >
+              Contact us
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark text-dark cursor-pointer"
+            >
+              Testimonials
+            </a>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Our Products</h3>
-            <ul className="space-y-2">
-              {[
-                'Mobile Chargers',
-                'Data Cables',
-                'Power Banks',
-                'Bluetooth Speakers',
-                'Earphones'
-              ].map((product, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {product}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Support Links Column */}
+          <div className="flex flex-col">
+            <h2 className="text-base font-semibold leading-4 text-gray-800 dark:text-dark">Support</h2>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
+            >
+              Legal policy
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
+            >
+              Status policy
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
+            >
+              Privacy policy
+            </a>
+            <a
+              href="#"
+              className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
+            >
+              Terms of service
+            </a>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center text-gray-400">
-                <MapPin className="w-5 h-5 mr-2" />
-                Delhi, India
-              </li>
-              <li className="flex items-center text-gray-400">
-                <Mail className="w-5 h-5 mr-2" />
-                info@myra-digital.com
-              </li>
-              <li className="flex items-center text-gray-400">
-                <Phone className="w-5 h-5 mr-2" />
-                +91 1234567890
-              </li>
-            </ul>
+          {/* Newsletter Subscription - Desktop */}
+          <div className="mt-10 lg:block hidden">
+            <label className="text-xl font-medium leading-5 text-gray-800 dark:text-dark">Get updates</label>
+            <div className="cursor-pointer flex items-center justify-between border border-gray-800 dark:border-white mt-4">
+              <input
+                type="text"
+                className="text-base leading-4 p-4 w-full focus:outline-none text-gray-800 dark:text-white dark:placeholder-white dark:bg-gray-900 dark:border-white placeholder-gray-800"
+                placeholder="Enter your email"
+              />
+              <button
+                aria-label="send"
+                className="mr-4 fill-current text-gray-800 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+              >
+                <Send size={16} className="dark:text-white dark:hover:text-gray-200" />
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 Myra Digital India. All rights reserved.
-            </p>
+        {/* Newsletter Subscription - Mobile */}
+        <div className="mt-10 lg:hidden">
+          <label className="text-xl font-medium text-dark">Get updates</label>
+          <div className="flex items-center justify-between border border-gray-800 dark:border-white mt-4">
+            <input
+              type="text"
+              className="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800 dark:text-white dark:placeholder-white dark:border-white dark:bg-gray-900"
+              placeholder="Enter your email"
+            />
+            <button
+              aria-label="send"
+              className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer mr-4 cursor-pointer relative z-40"
+            >
+              <Send
+                size={16}
+                className="fill-current text-gray-800 hover:text-gray-500 dark:text-white dark:hover:text-gray-200"
+              />
+            </button>
           </div>
         </div>
       </div>
-    </footer>
-  );
-};
+    </section>
+  )
+}
+
