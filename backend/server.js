@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const serverless = require("serverless-http"); // For serverless compatibility
+const serverless = require("serverless-http"); // serverless compatibility
 require("dotenv").config();
 
 const app = express();
