@@ -7,37 +7,32 @@ interface Product {
   title: string;
   image: string;
   description: string;
-  price: string;
 }
 
 const products: Product[] = [
   {
     id: 1,
-    title: "Product 1",
+    title: "25W PD Charger",
     image: "img/chargers/PD-25w-charger.jpg",
     description: "High-quality product with advanced features",
-    price: "$99.99",
   },
   {
     id: 2,
-    title: "Product 2",
+    title: "C to C braided Cable",
     image: "img/dataCables/c-to-c-braided.jpg",
     description: "Premium product with warranty",
-    price: "$129.99",
   },
   {
     id: 3,
-    title: "Product 3",
+    title: "20W PD charger",
     image: "img/chargers/PD-20w-charger.jpg",
     description: "Eco-friendly and durable",
-    price: "$149.99",
   },
   {
     id: 4,
-    title: "Product 4",
+    title: "HY300 Free Style Projector",
     image: "img/projectors/hy300.jpg",
     description: "Modern design with smart features",
-    price: "$159.99",
   },
   // Add more products here if needed
 ];
@@ -77,7 +72,6 @@ const ProductSection = () => {
               />
               <div className="p-4 bg-white">
                 <h3 className="text-xl font-semibold">{product.title}</h3>
-                <p className="text-gray-600">{product.price}</p>
               </div>
 
               {/* Hover Actions */}
