@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img
-                src="public\img\logo.png"
+                src="img/logo.png"
                 alt="Logo"
                 className="h-20 w-auto object-contain"
               />
