@@ -20,7 +20,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchEnquiries = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/enquiries")
+        const response = await fetch("myra-digital-backend.vercel.app/api/enquiries")
         if (!response.ok) throw new Error("Failed to fetch enquiries")
 
         const data = await response.json()

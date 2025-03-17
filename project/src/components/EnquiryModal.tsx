@@ -38,7 +38,7 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
     setSubmitError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/enquiries", {
+      const response = await fetch("myra-digital-backend.vercel.app/api/enquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
