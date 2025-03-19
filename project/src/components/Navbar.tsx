@@ -1,8 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom" // Import useLocation
 import {
-  Home,
   Info,
   HelpCircle,
   Package,
@@ -14,7 +13,14 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const location = useLocation() // Get the current location
 
+  // Close the mobile menu when the route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [location]) // Triggered whenever the location changes
+
+  // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
@@ -26,14 +32,13 @@ export default function Navbar() {
   }, [prevScrollPos])
 
   const productCategories = [
-    { name: "Chargers", link: "/chargers", submenu: ["20W PD CHarger", "25W PD Charger", "25w Type C PD charger","45w Type C PD charger","67w PD charger","80w Type C PD charger"] },
+    { name: "Chargers", link: "/chargers", submenu: ["20W PD Charger", "25W PD Charger", "25w Type C PD charger", "45w Type C PD charger", "67w PD charger", "80w Type C PD charger"] },
     { name: "Car Chargers", link: "/car-chargers", submenu: ["Product 1", "Product 2", "Product 3"] },
-    { name: "Data Cables", link: "/data-cables", submenu: ["C to C Braided Cable", "C to C Cable", "Type C to Lightning Cable","Dash Cable","PVC USB to Type C","Red Braided USB to Lightning Cable"] },
-    { name: "Projectors", link: "/projectors", submenu: ["HY300 Free Style Projector", "Handy Projector", "P6 Projector","P7 Projector","Q3 White Projector","X1 Pro Projector","X3 Pro Projector","X4 Projector","RD828 Projector"] },
+    { name: "Data Cables", link: "/data-cables", submenu: ["C to C Braided Cable", "C to C Cable", "Type C to Lightning Cable", "Dash Cable", "PVC USB to Type C", "Red Braided USB to Lightning Cable"] },
+    { name: "Projectors", link: "/projectors", submenu: ["HY300 Free Style Projector", "Handy Projector", "P6 Projector", "P7 Projector", "Q3 White Projector", "X1 Pro Projector", "X3 Pro Projector", "X4 Projector", "RD828 Projector"] },
     { name: "Note Counting Machine", link: "/currency-counting-machine", submenu: ["V30 Note Counting Machine"] },
     { name: "Power Banks", link: "/power-banks", submenu: ["Product 1", "Product 2", "Product 3"] },
     { name: "OEM Solutions", link: "/oem", submenu: ["Product 1", "Product 2", "Product 3"] },
-
   ]
 
   return (
@@ -72,7 +77,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Section - Contact Button */}
-          <div className="hidden md:flex space-x-4"> {/* Added space between buttons */}
+          <div className="hidden md:flex space-x-4">
             <Link
               to="/contact"
               className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)]"
@@ -82,7 +87,7 @@ export default function Navbar() {
 
             {/* New WhatsApp Button */}
             <a
-              href="https://wa.me/9711711185" // Replace with your actual number
+              href="https://wa.me/9711711185"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] flex items-center space-x-2"
@@ -90,35 +95,34 @@ export default function Navbar() {
               <span>WhatsApp</span>
             </a>
           </div>
-
         </div>
 
         {/* Second Row - Product Categories */}
         <div className="hidden md:flex justify-center items-center h-16">
           <div className="flex flex-wrap justify-center gap-6">
-{productCategories.map((category, index) => (
-  <div key={index} className="relative group">
-    <Link to={category.link} className="flex items-center space-x-2 text-gray-700 hover:text-pink-500 transition-colors">
-      <Package size={20} className="group-hover:scale-110 transition-transform" />
-      <span>{category.name}</span>
-      <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
-    </Link>
-    <div className="absolute bg-white mt-2 py-2 w-48 rounded-md shadow-lg z-10 border border-pink-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-      {category.submenu.map((item, i) => {
-        const productHash = `product-${item.toLowerCase().replace(/\s+/g, '-')}`; // Prefix with "product-"
-        return (
-          <Link
-            key={i}
-            to={`${category.link}#${productHash}`} // Use the prefixed hash
-            className="block px-4 py-2 text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
-          >
-            {item}
-          </Link>
-        );
-      })}
-    </div>
-  </div>
-))}
+            {productCategories.map((category, index) => (
+              <div key={index} className="relative group">
+                <Link to={category.link} className="flex items-center space-x-2 text-gray-700 hover:text-pink-500 transition-colors">
+                  <Package size={20} className="group-hover:scale-110 transition-transform" />
+                  <span>{category.name}</span>
+                  <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
+                </Link>
+                <div className="absolute bg-white mt-2 py-2 w-48 rounded-md shadow-lg z-10 border border-pink-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  {category.submenu.map((item, i) => {
+                    const productHash = `product-${item.toLowerCase().replace(/\s+/g, '-')}`;
+                    return (
+                      <Link
+                        key={i}
+                        to={`${category.link}#${productHash}`}
+                        className="block px-4 py-2 text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
+                      >
+                        {item}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -157,15 +161,18 @@ export default function Navbar() {
           <div className="mt-4 space-y-2">
             {productCategories.map((category, index) => (
               <div key={index} className="relative">
-                <Link to="/products" className="flex items-center justify-between w-full text-gray-700 hover:text-pink-500 transition-colors px-3 py-2">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="flex items-center justify-between w-full text-gray-700 hover:text-pink-500 transition-colors px-3 py-2"
+                >
                   {category.name}
-                  <ChevronDown size={16} className="transition-transform group-hover:rotate-180" />
-                </Link>
-                <div className="absolute bg-white w-full mt-2 py-2 rounded-md shadow-lg border border-pink-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <ChevronDown size={16} className="transition-transform" />
+                </button>
+                <div className="pl-4">
                   {category.submenu.map((item, i) => (
                     <Link
                       key={i}
-                      to={`/products/${i + 1}`}
+                      to={`${category.link}#product-${item.toLowerCase().replace(/\s+/g, '-')}`}
                       className="block px-4 py-2 text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
                     >
                       {item}
