@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { Search, User, Shield, CreditCard, PaintBucket, Package, Settings } from 'lucide-react';
 
 const FAQ = () => {
+  useEffect(() => {
+    // Track page view
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
+  }, []);
+
   return (
     <div className="font-sans">
       {/* Hero Section */}
@@ -10,14 +16,13 @@ const FAQ = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center my-8 animate-fade-in">
             Frequently Asked Questions
           </h1>
-          
         </div>
       </div>
 
-       {/* FAQ Sections */}
-       <div className="container mx-auto px-10 py-16">
+      {/* FAQ Sections */}
+      <div className="container mx-auto px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[ 
+          {[
             { icon: <Package />, title: 'Getting Started', desc: 'Installation and setup instructions' },
             { icon: <User />, title: 'User Account', desc: 'Account management and security' },
             { icon: <Settings />, title: 'Product Features', desc: 'Feature guides and tutorials' },
@@ -25,7 +30,7 @@ const FAQ = () => {
             { icon: <CreditCard />, title: 'Payment', desc: 'Gateway integration and billing' },
             { icon: <Shield />, title: 'Security', desc: 'Data protection and compliance' },
           ].map((item, index) => (
-            <div 
+            <div
               key={index}
               className="bg-pink-100 rounded-lg p-6 transform transition-all hover:scale-105 hover:shadow-lg"
             >
@@ -44,19 +49,29 @@ const FAQ = () => {
       </div>
 
       {/* Support Team */}
-      <div className="bg-pink-100  py-16">
-        <div className="container  mx-auto px-4 text-center">
+      <div className="bg-pink-100 py-16">
+        <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-pink-700 mb-8 animate-fade-in-up">
             Didn’t find an answer?
           </h2>
-          <button className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-neon-pink">
-            Contact Us
+          <button
+            onClick={() => {
+              // Track "Contact Us" button click
+              ReactGA.event({
+                category: 'Engagement',
+                action: 'Clicked Contact Us',
+                label: 'FAQ Page',
+              });
+              
+            }}
+            className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-neon-pink"
+          >
+            <a href="/contact">Contact Us</a>
           </button>
         </div>
       </div>
     </div>
   );
+};
 
-}
-
-export default FAQ
+export default FAQ;

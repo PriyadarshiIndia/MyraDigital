@@ -97,13 +97,13 @@ export default function Footer() {
               Status policy
             </a>
             <a
-              href="#"
+              href="privacy-policy"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
             >
               Privacy policy
             </a>
             <a
-              href="#"
+              href="/terms&conditions"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 text-dark cursor-pointer"
             >
               Terms of service

@@ -1,6 +1,7 @@
-'use client'
-import { useState, useEffect } from "react";
-import EnquiryModal from "../components/EnquiryModal";
+'use client';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4'; // Import Google Analytics
+import EnquiryModal from '../components/EnquiryModal';
 
 interface Specification {
   [key: string]: string;
@@ -17,6 +18,11 @@ interface Product {
 export default function Projectors() {
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  // Track page view when the component mounts
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: '/projectors' });
+  }, []);
 
   const products: Product[] = [
     {
@@ -146,13 +152,21 @@ export default function Projectors() {
       }
     }
   ];
-
+  
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: 'smooth' });
+
+        // Track hash navigation event
+        ReactGA.send({
+          hitType: 'event',
+          eventCategory: 'Navigation',
+          eventAction: 'Hash Navigation',
+          eventLabel: hash,
+        });
       }
     }
   }, []);
@@ -160,17 +174,56 @@ export default function Projectors() {
   const openEnquireModal = (product: Product) => {
     setSelectedProduct(product);
     setIsEnquireModalOpen(true);
+
+    // Track "Get Quote" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: `Get Quote - ${product.title}`,
+    });
   };
 
   const closeModals = () => {
     setIsEnquireModalOpen(false);
     setSelectedProduct(null);
+
+    // Track modal close event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Modal Close',
+      eventLabel: 'Enquiry Modal',
+    });
+  };
+
+  const handleBannerClick = () => {
+    // Track banner click event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Banner Click',
+      eventLabel: 'Projectors Banner',
+    });
+  };
+
+  const handleCTAClick = () => {
+    // Track "Contact Us" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: 'Contact Us - CTA',
+    });
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Banner Section */}
-      <div className="relative h-[600px] overflow-hidden">
+      <div
+        className="relative h-[600px] overflow-hidden cursor-pointer"
+        onClick={handleBannerClick}
+      >
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1587402035753-4d36a4a39a2c"
@@ -204,11 +257,11 @@ export default function Projectors() {
         </h2>
         <div className="space-y-32">
           {products.map((product, index) => {
-            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`; // Generate URL-friendly hash
+            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`;
             return (
               <div
                 key={product.id}
-                id={productHash} // Use the hash as the ID
+                id={productHash}
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 } items-center gap-12`}
@@ -284,8 +337,11 @@ export default function Projectors() {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Transform your viewing experience with our professional projection solutions
           </p>
-          <button className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]">
-            Contact Us
+          <button
+            onClick={handleCTAClick}
+            className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
+          >
+            <a href="/contact">Contact Us</a>
           </button>
         </div>
       </div>
@@ -294,3 +350,5 @@ export default function Projectors() {
     </div>
   );
 }
+
+

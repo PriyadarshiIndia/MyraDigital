@@ -1,6 +1,7 @@
-'use client'
-import { useState, useEffect } from "react";
-import EnquiryModal from "../components/EnquiryModal";
+'use client';
+import { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
+import EnquiryModal from '../components/EnquiryModal';
 
 interface Specification {
   [key: string]: string;
@@ -100,11 +101,15 @@ export default function DataCable() {
   ];
 
   useEffect(() => {
+    // Track page view
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
+
+    // Scroll to hash if present
     const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
   }, []);
@@ -112,11 +117,24 @@ export default function DataCable() {
   const openEnquireModal = (product: Product) => {
     setSelectedProduct(product);
     setIsEnquireModalOpen(true);
+
+    // Track "Get Quote" button click
+    ReactGA.event({
+      category: 'Engagement',
+      action: 'Clicked Get Quote',
+      label: product.title,
+    });
   };
 
   const closeModals = () => {
     setIsEnquireModalOpen(false);
     setSelectedProduct(null);
+
+    // Track modal close
+    ReactGA.event({
+      category: 'Engagement',
+      action: 'Closed Enquiry Modal',
+    });
   };
 
   return (
@@ -156,11 +174,11 @@ export default function DataCable() {
         </h2>
         <div className="space-y-32">
           {products.map((product, index) => {
-            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`; // Generate URL-friendly hash
+            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`;
             return (
               <div
                 key={product.id}
-                id={productHash} // Use the hash as the ID
+                id={productHash}
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 } items-center gap-12`}
@@ -236,8 +254,18 @@ export default function DataCable() {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Contact our team for custom connectivity solutions tailored to your specific needs
           </p>
-          <button className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]">
-            Contact Us
+          <button
+            onClick={() => {
+              ReactGA.event({
+                category: 'Engagement',
+                action: 'Clicked Contact Us',
+                label: 'DataCable Page',
+              });
+            
+            }}
+            className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
+          >
+            <a href="/contact">Contact</a>
           </button>
         </div>
       </div>

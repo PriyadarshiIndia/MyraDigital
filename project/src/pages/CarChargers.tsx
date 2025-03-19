@@ -1,6 +1,7 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4'; // Import the default export for Google Analytics
 import EnquiryModal from '../components/EnquiryModal';
 
 interface Specification {
@@ -19,10 +20,15 @@ const CarChargers = () => {
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Track page view when the component mounts
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: '/car-chargers' });
+  }, []);
+
   const bannerData = {
     title: 'Car Chargers',
     description: 'Check out our latest collection of premium products',
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f6eb5b0'
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f6eb5b0',
   };
 
   const products: Product[] = [
@@ -36,8 +42,8 @@ const CarChargers = () => {
         'Noise Cancellation': 'Yes',
         'Connectivity': 'Bluetooth 5.0',
         'Weight': '250g',
-        'Dimensions': '18cm x 16cm x 6cm'
-      }
+        'Dimensions': '18cm x 16cm x 6cm',
+      },
     },
     {
       id: 2,
@@ -49,8 +55,8 @@ const CarChargers = () => {
         'Heart Rate Monitoring': 'Yes',
         'GPS Tracking': 'Yes',
         'Water Resistance': '50m',
-        'Weight': '50g'
-      }
+        'Weight': '50g',
+      },
     },
     {
       id: 3,
@@ -62,25 +68,61 @@ const CarChargers = () => {
         'Waterproof': 'Yes',
         'Sound': '360°',
         'Weight': '600g',
-        'Dimensions': '20cm x 20cm x 10cm'
-      }
-    }
+        'Dimensions': '20cm x 20cm x 10cm',
+      },
+    },
   ];
 
   const openEnquireModal = (product: Product) => {
     setSelectedProduct(product);
     setIsEnquireModalOpen(true);
+
+    // Track "Get Quote" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: `Get Quote - ${product.title}`,
+    });
   };
 
   const closeModals = () => {
     setIsEnquireModalOpen(false);
     setSelectedProduct(null);
+
+    // Track modal close event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Modal Close',
+      eventLabel: 'Enquiry Modal',
+    });
+  };
+
+  const handleBannerClick = () => {
+    // Track banner click event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Banner Click',
+      eventLabel: 'Car Chargers Banner',
+    });
+  };
+
+  const handleCTAClick = () => {
+    // Track "Contact Us" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: 'Contact Us - CTA',
+    });
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Banner Section */}
-      <div className="relative h-[600px] overflow-hidden">
+      <div className="relative h-[600px] overflow-hidden cursor-pointer" onClick={handleBannerClick}>
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -125,7 +167,7 @@ const CarChargers = () => {
         <h2 className="text-4xl font-bold text-center mb-16">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-fuchsia-500">Featured</span> Products
         </h2>
-        
+
         <div className="space-y-32">
           {products.map((product, index) => (
             <div
@@ -207,7 +249,10 @@ const CarChargers = () => {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Contact our team for custom charging solutions tailored to your specific needs.
           </p>
-          <button className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]">
+          <button
+            onClick={handleCTAClick}
+            className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
+          >
             Contact Us
           </button>
         </div>

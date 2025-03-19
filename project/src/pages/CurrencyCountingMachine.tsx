@@ -1,6 +1,7 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4'; // Import the default export for Google Analytics
 import EnquiryModal from '../components/EnquiryModal';
 
 interface Specification {
@@ -19,17 +20,23 @@ const CurrencyCountingMachine = () => {
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Track page view when the component mounts
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: '/currency-counting-machine' });
+  }, []);
+
   const bannerData = {
     title: 'Currency Counting Machine',
     description: 'Check out our latest collection of premium products',
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f6eb5b0'
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f6eb5b0',
   };
 
   const products: Product[] = [
     {
       id: 1,
       title: 'V30 Note Counting Machine',
-      description: 'The V30 LED Display Mini Portable Currency Counting Machine is a high-speed, OEM-ready solution designed for efficient cash handling. With a counting speed of 600 notes per minute and an adjustable speed feature, it ensures smooth operation for INR, USD, and EURO currencies. Its LED touch screen interface provides seamless control, while its battery and AC adapter compatibility offer ultimate portability. Ideal for OEMs, this compact yet powerful machine supports batch counting and denomination breakup, making it perfect for banks, retail, and financial institutions. Order in bulk for OEM customization!',
+      description:
+        'The V30 LED Display Mini Portable Currency Counting Machine is a high-speed, OEM-ready solution designed for efficient cash handling. With a counting speed of 600 notes per minute and an adjustable speed feature, it ensures smooth operation for INR, USD, and EURO currencies. Its LED touch screen interface provides seamless control, while its battery and AC adapter compatibility offer ultimate portability. Ideal for OEMs, this compact yet powerful machine supports batch counting and denomination breakup, making it perfect for banks, retail, and financial institutions. Order in bulk for OEM customization!',
       image: 'img/countingMachine/v30.jpeg',
       specifications: {
         'Counting Speed': '600 notes/min',
@@ -38,9 +45,8 @@ const CurrencyCountingMachine = () => {
         'Adjustable Speed': 'Yes',
         'Hopper Capacity': '600 Notes',
         'Display Type': 'LED',
-      }
+      },
     },
-    
   ];
 
   useEffect(() => {
@@ -48,7 +54,15 @@ const CurrencyCountingMachine = () => {
     if (hash) {
       const element = document.querySelector(hash);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: 'smooth' });
+
+        // Track hash navigation event
+        ReactGA.send({
+          hitType: 'event',
+          eventCategory: 'Navigation',
+          eventAction: 'Hash Navigation',
+          eventLabel: hash,
+        });
       }
     }
   }, []);
@@ -56,17 +70,56 @@ const CurrencyCountingMachine = () => {
   const openEnquireModal = (product: Product) => {
     setSelectedProduct(product);
     setIsEnquireModalOpen(true);
+
+    // Track "Get Quote" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: `Get Quote - ${product.title}`,
+    });
   };
 
   const closeModals = () => {
     setIsEnquireModalOpen(false);
     setSelectedProduct(null);
+
+    // Track modal close event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Modal Close',
+      eventLabel: 'Enquiry Modal',
+    });
+  };
+
+  const handleBannerClick = () => {
+    // Track banner click event
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Banner Click',
+      eventLabel: 'Currency Counting Machine Banner',
+    });
+  };
+
+  const handleCTAClick = () => {
+    // Track "Contact Us" button click
+    ReactGA.send({
+      hitType: 'event',
+      eventCategory: 'User Interaction',
+      eventAction: 'Button Click',
+      eventLabel: 'Contact Us - CTA',
+    });
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Banner Section */}
-      <div className="relative h-[600px] overflow-hidden">
+      <div
+        className="relative h-[600px] overflow-hidden cursor-pointer"
+        onClick={handleBannerClick}
+      >
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -111,14 +164,14 @@ const CurrencyCountingMachine = () => {
         <h2 className="text-4xl font-bold text-center mb-16">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-fuchsia-500">Featured</span> Products
         </h2>
-        
+
         <div className="space-y-32">
           {products.map((product, index) => {
-            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`; // Generate URL-friendly hash
+            const productHash = `product-${product.title.toLowerCase().replace(/\s+/g, '-')}`;
             return (
               <div
                 key={product.id}
-                id={productHash} // Use the hash as the ID
+                id={productHash}
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 } items-center gap-12`}
@@ -197,7 +250,10 @@ const CurrencyCountingMachine = () => {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Contact our team for custom charging solutions tailored to your specific needs.
           </p>
-          <button className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]">
+          <button
+            onClick={handleCTAClick}
+            className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
+          >
             Contact Us
           </button>
         </div>

@@ -1,16 +1,23 @@
-import React from 'react'
-import HeroSection from '../components/HeroSection'
-import CompanySection from '../components/CompanySection'
-import CategoriesSection from '../components/CategoriesSection'
-import FeaturedSection from '../components/FeaturedSection'
-import WhyChooseUs from '../components/WhyChooseUs'
-import ProductSection from '../components/ProductSection'
-import BannerSection from '../components/BannerSection'
-import Highlights from '../components/Highlights'
-import FeaturedProductSection from '../components/FeaturedProductSection'
-import NewsletterSection from '../components/NewsLetterSection'
-import { Helmet } from 'react-helmet-async'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga4';
+import HeroSection from '../components/HeroSection';
+import CompanySection from '../components/CompanySection';
+import CategoriesSection from '../components/CategoriesSection';
+import FeaturedSection from '../components/FeaturedSection';
+import WhyChooseUs from '../components/WhyChooseUs';
+import ProductSection from '../components/ProductSection';
+import BannerSection from '../components/BannerSection';
+import Highlights from '../components/Highlights';
+import FeaturedProductSection from '../components/FeaturedProductSection';
+import NewsletterSection from '../components/NewsLetterSection';
+import { Helmet } from 'react-helmet-async';
+
 const Home = () => {
+  useEffect(() => {
+    // Track page view
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -26,7 +33,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.myra-digital.com/" />
       </Helmet>
 
-      <div className='bg-white'>
+      <div className="bg-white">
         <HeroSection />
         <CompanySection />
         <CategoriesSection />
@@ -39,7 +46,7 @@ const Home = () => {
         <NewsletterSection />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
