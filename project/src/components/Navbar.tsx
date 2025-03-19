@@ -24,15 +24,15 @@ export default function Navbar() {
 
   // Handle scroll behavior (only for desktop)
   useEffect(() => {
-    if (window.innerWidth >= 768) { // Only apply scroll behavior for desktop
-      const handleScroll = () => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) { // Only apply scroll behavior for desktop
         const currentScrollPos = window.scrollY
         setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10)
         setPrevScrollPos(currentScrollPos)
       }
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
     }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [prevScrollPos])
 
   const productCategories = [
