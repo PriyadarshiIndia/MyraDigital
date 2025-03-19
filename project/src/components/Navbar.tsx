@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom" // Import useLocation
+import { Link, useLocation } from "react-router-dom"
 import {
   Info,
   HelpCircle,
@@ -13,22 +13,26 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const location = useLocation() // Get the current location
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null) // Track open dropdown
+  const location = useLocation()
 
   // Close the mobile menu when the route changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
-  }, [location]) // Triggered whenever the location changes
+    setOpenDropdownIndex(null) // Close dropdowns on route change
+  }, [location])
 
-  // Handle scroll behavior
+  // Handle scroll behavior (only for desktop)
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10)
-      setPrevScrollPos(currentScrollPos)
+    if (window.innerWidth >= 768) { // Only apply scroll behavior for desktop
+      const handleScroll = () => {
+        const currentScrollPos = window.scrollY
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10)
+        setPrevScrollPos(currentScrollPos)
+      }
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [prevScrollPos])
 
   const productCategories = [
@@ -40,6 +44,15 @@ export default function Navbar() {
     { name: "Power Banks", link: "/power-banks", submenu: ["Product 1", "Product 2", "Product 3"] },
     { name: "OEM Solutions", link: "/oem", submenu: ["Product 1", "Product 2", "Product 3"] },
   ]
+
+  // Toggle dropdown in mobile view
+  const toggleDropdown = (index : any) => {
+    if (openDropdownIndex === index) {
+      setOpenDropdownIndex(null) // Close if already open
+    } else {
+      setOpenDropdownIndex(index) // Open the clicked dropdown
+    }
+  }
 
   return (
     <nav className={`fixed w-full bg-white shadow-md transition-transform duration-300 ease-in-out z-50 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
@@ -130,7 +143,7 @@ export default function Navbar() {
         <div className="md:hidden flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <img
-              src="src/img/logo.png"
+              src=" img/logo.png"
               alt="Logo"
               className="h-10 w-auto object-contain"
             />
@@ -162,23 +175,25 @@ export default function Navbar() {
             {productCategories.map((category, index) => (
               <div key={index} className="relative">
                 <button
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  onClick={() => toggleDropdown(index)} // Toggle dropdown on click
                   className="flex items-center justify-between w-full text-gray-700 hover:text-pink-500 transition-colors px-3 py-2"
                 >
-                  {category.name}
-                  <ChevronDown size={16} className="transition-transform" />
+                  <span>{category.name}</span>
+                  <ChevronDown size={16} className={`transition-transform ${openDropdownIndex === index ? "rotate-180" : ""}`} />
                 </button>
-                <div className="pl-4">
-                  {category.submenu.map((item, i) => (
-                    <Link
-                      key={i}
-                      to={`${category.link}#product-${item.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block px-4 py-2 text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
+                {openDropdownIndex === index && ( // Show submenu if dropdown is open
+                  <div className="pl-4">
+                    {category.submenu.map((item, i) => (
+                      <Link
+                        key={i}
+                        to={`${category.link}#product-${item.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-4 py-2 text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
+                      >
+                        {item}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
