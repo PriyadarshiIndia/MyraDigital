@@ -90,7 +90,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <h3 className="font-semibold text-gray-800">Location</h3>
-                  <p className="text-gray-600">123 Company St, City, Country</p>
+                  <p className="text-gray-600">153/1, Pocket C, Okhla Phase I, Okhla Industrial Estate, New Delhi, Delhi 110020</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <h3 className="font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600">info@company.com</p>
+                  <p className="text-gray-600"> info@myra-digital.com</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <h3 className="font-semibold text-gray-800">Phone</h3>
-                  <p className="text-gray-600">+123 456 7890</p>
+                  <p className="text-gray-600">+91 8076418834</p>
                 </div>
               </div>
 

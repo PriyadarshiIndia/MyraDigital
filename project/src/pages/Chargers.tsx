@@ -193,7 +193,7 @@ export default function Chargers() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/banner.jpg"
+            src="img/chargers/charger_hero.png"
             alt="Chargers Background"
             className="w-full h-full object-cover"
           />

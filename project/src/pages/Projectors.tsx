@@ -226,7 +226,7 @@ export default function Projectors() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1587402035753-4d36a4a39a2c"
+            src="img/projectors/projector_hero.png"
             alt="Projectors Background"
             className="w-full h-full object-cover"
           />

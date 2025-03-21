@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
 
         {/* Call to Action Button */}
         <button className="mt-6 bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:scale-105 font-medium">
-          Partner with Us
+          <a href="/contact">Partner With Us</a>
         </button>
       </div>
     </section>

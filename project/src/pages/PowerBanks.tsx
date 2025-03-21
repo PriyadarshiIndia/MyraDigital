@@ -79,7 +79,7 @@ export default function PowerBanks() {
       <div className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1588872657578-7efd1f6eb5b0"
+            src="img/power-banks/powerBank_hero.png"
             alt="Power Banks Background"
             className="w-full h-full object-cover"
           />

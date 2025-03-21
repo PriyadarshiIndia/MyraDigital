@@ -123,7 +123,7 @@ const CurrencyCountingMachine = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={bannerData.image}
+            src="img/countingMachine/currencyCounting_hero.png"
             alt="Currency Counting Machine Background"
             className="w-full h-full object-cover"
           />

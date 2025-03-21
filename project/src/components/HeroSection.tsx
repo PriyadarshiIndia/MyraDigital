@@ -1,56 +1,171 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // If using lucide-react icons
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 
+// Slide Components
+const Slide1 = () => (
+  <div
+    className="w-full h-full flex-shrink-0 relative"
+    style={{
+      backgroundImage: "url('/img/slide-1.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="relative z-10 h-full flex items-center p-8 md:p-16">
+      <div className="max-w-3xl text-white">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Empower Your Devices with Premium Accessories</h1>
+        <p className="text-xl md:text-2xl mb-8">
+          We specialize in crafting high-quality mobile accessories designed to meet the unique needs of OEMs. Elevate your product offerings with our innovative solutions.
+        </p>
+        <div className="flex gap-4">
+          <a href="/products">
+            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
+              Explore Our Catalog
+            </button>
+          </a>
+          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide2 = () => (
+  <div
+    className="w-full h-full flex-shrink-0 relative"
+    style={{
+      backgroundImage: "url('/img/slide-2.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="relative z-10 h-full flex items-center p-8 md:p-16">
+      <div className="max-w-3xl text-white">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Tailored Solutions for Every OEM Partner</h1>
+        <p className="text-xl md:text-2xl mb-8">
+          From custom-branded chargers to bespoke packaging, we deliver scalable accessory solutions tailored to your business requirements.
+        </p>
+        <div className="flex gap-4">
+          <a href="/custom-solutions">
+            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
+              Learn About Customization
+            </button>
+          </a>
+          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide3 = () => (
+  <div
+    className="w-full h-full flex-shrink-0 relative"
+    style={{
+      backgroundImage: "url('/img/slide-3.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="relative z-10 h-full flex items-center p-8 md:p-16">
+      <div className="max-w-3xl text-white">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Stay Ahead with Advanced Accessories</h1>
+        <p className="text-xl md:text-2xl mb-8">
+          Our cutting-edge technology ensures compatibility, durability, and performance. Partner with us to integrate the latest innovations into your lineup.
+        </p>
+        <div className="flex gap-4">
+          <a href="/technology">
+            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
+              Discover Our Tech
+            </button>
+          </a>
+          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide4 = () => (
+  <div
+    className="w-full h-full flex-shrink-0 relative"
+    style={{
+      backgroundImage: "url('/img/slide-4.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="relative z-10 h-full flex items-center p-8 md:p-16">
+      <div className="max-w-3xl text-white">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Serving OEMs Worldwide with Reliable Supply Chains</h1>
+        <p className="text-xl md:text-2xl mb-8">
+          With manufacturing hubs across the globe and localized support, we ensure timely delivery and exceptional service wherever you operate.
+        </p>
+        <div className="flex gap-4">
+          <a href="/global-network">
+            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
+              View Our Network
+            </button>
+          </a>
+          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide5 = () => (
+  <div
+    className="w-full h-full flex-shrink-0 relative"
+    style={{
+      backgroundImage: "url('/img/slide-5.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="relative z-10 h-full flex items-center p-8 md:p-16">
+      <div className="max-w-3xl text-white">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Building Long-Term Partnerships for Success</h1>
+        <p className="text-xl md:text-2xl mb-8">
+          More than just suppliers, we are your trusted partners in innovation. Together, let’s create impactful products that drive growth.
+        </p>
+        <div className="flex gap-4">
+          <a href="/contact-us">
+            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
+              Start a Partnership
+            </button>
+          </a>
+          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Main HeroSection Component
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const slides = [
-    {
-      backgroundImage: "url('/img/slide-1.jpg')",
-      title: "Empower Your Devices with Premium Accessories",
-      description:
-        "We specialize in crafting high-quality mobile accessories designed to meet the unique needs of OEMs. Elevate your product offerings with our innovative solutions.",
-      buttonText: "Explore Our Catalog",
-      link: "/products",
-    },
-    {
-      backgroundImage: "url('/img/slide-2.png')",
-      title: "Tailored Solutions for Every OEM Partner",
-      description:
-        "From custom-branded chargers to bespoke packaging, we deliver scalable accessory solutions tailored to your business requirements.",
-      buttonText: "Learn About Customization",
-      link: "/custom-solutions",
-    },
-    {
-      backgroundImage: "url('/img/slide-3.jpg')",
-      title: "Stay Ahead with Advanced Accessories",
-      description:
-        "Our cutting-edge technology ensures compatibility, durability, and performance. Partner with us to integrate the latest innovations into your lineup.",
-      buttonText: "Discover Our Tech",
-      link: "/technology",
-    },
-    {
-      backgroundImage: "url('/img/slide-4.jpg')",
-      title: "Serving OEMs Worldwide with Reliable Supply Chains",
-      description:
-        "With manufacturing hubs across the globe and localized support, we ensure timely delivery and exceptional service wherever you operate.",
-      buttonText: "View Our Network",
-      link: "/global-network",
-    },
-    {
-      backgroundImage: "url('/img/slide-5.jpg')",
-      title: "Building Long-Term Partnerships for Success",
-      description:
-        "More than just suppliers, we are your trusted partners in innovation. Together, let’s create impactful products that drive growth.",
-      buttonText: "Start a Partnership",
-      link: "/contact-us",
-    },
-  ];
-
+  const slides = [<Slide1 />, <Slide2 />, <Slide3 />, <Slide4 />, <Slide5 />];
   const totalSlides = slides.length;
 
   // Navigate to previous or next slide
-  const navigate = (direction:any) => {
+  const navigate = (direction : any) => {
     setCurrentIndex((prev) => {
       if (direction === "next") {
         return (prev + 1) % totalSlides;
@@ -75,50 +190,8 @@ export default function HeroSection() {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="w-full h-full flex-shrink-0 relative"
-            style={{
-              backgroundImage: slide.backgroundImage,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/30"></div>
-
-            {/* Content */}
-            <div className="relative z-10 h-full flex items-center p-8 md:p-16">
-              <div className="max-w-3xl text-white">
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">{slide.title}</h1>
-                <p className="text-xl md:text-2xl mb-8">{slide.description}</p>
-                <div className="flex gap-4">
-                  {/* Primary Button */}
-                  <a href={slide.link}>
-                    <button
-                      className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors"
-                      style={{
-                        backgroundColor: "#1e40af", // Example primary color
-                        
-                      }}
-                    >
-                      {slide.buttonText}
-                    </button>
-                  </a>
-
-                  {/* Secondary Button */}
-                  <button
-                    className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-                    style={{
-                      borderColor: "white",
-                      color: "white",
-                    }}
-                  >
-                    Contact Us
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div key={index} className="w-full h-full flex-shrink-0">
+            {slide}
           </div>
         ))}
       </div>
