@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactGA from "react-ga4"; // Import the default export for Google Analytics
 import EnquiryModal from "../components/EnquiryModal";
+import { Helmet } from 'react-helmet-async';
 
 interface Specification {
   [key: string]: string;
@@ -185,6 +186,24 @@ export default function Chargers() {
 
   return (
     <div className="min-h-screen bg-white">
+
+       <Helmet>
+        <title>High-Performance Chargers for OEMs | Fast & Reliable Power Solutions</title>
+        <meta name="description" content="Explore premium fast chargers like 20W PD, 25W Type-C, 45W, 67W, and 80W USB-C PD chargers. Designed for OEMs, these reliable power solutions ensure efficient, safe, and rapid charging for all devices." />
+        <meta name="keywords" content="USB-C PD chargers, fast charging solutions, OEM chargers, 20W PD charger, 25W Type-C charger, 45W PD charger, 67W PD charger, 80W PD charger, high-efficiency power solutions, custom branding chargers" />
+        <link rel="canonical" href="https://www.myra-digital.com/chargers" />
+        <meta property="og:title" content="High-Performance Chargers for OEMs | Fast & Reliable Power Solutions" />
+        <meta property="og:description" content="Explore premium fast chargers like 20W PD, 25W Type-C, 45W, 67W, and 80W USB-C PD chargers. Designed for OEMs, these reliable power solutions ensure efficient, safe, and rapid charging for all devices." />
+        <meta property="og:image" content="https://www.myra-digital.com/img/chargers/charger_hero.png" />
+        <meta property="og:url" content="https://www.myra-digital.com/chargers" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="High-Performance Chargers for OEMs | Fast & Reliable Power Solutions" />
+        <meta name="twitter:description" content="Explore premium fast chargers like 20W PD, 25W Type-C, 45W, 67W, and 80W USB-C PD chargers. Designed for OEMs, these reliable power solutions ensure efficient, safe, and rapid charging for all devices." />
+        <meta name="twitter:image" content="https://www.myra-digital.com.com/img/logo.png" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       {/* Hero Banner Section */}
       <div
         className="relative h-[600px] overflow-hidden cursor-pointer"
