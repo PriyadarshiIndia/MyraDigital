@@ -1,8 +1,8 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga4'; // Import the default export for Google Analytics
 import EnquiryModal from '../components/EnquiryModal';
+import { Helmet } from 'react-helmet-async';
 
 interface Specification {
   [key: string]: string;
@@ -115,6 +115,32 @@ const CurrencyCountingMachine = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Currency Counting Machine | High-Speed OEM Solutions for Cash Handling</title>
+        <meta
+          name="description"
+          content="Explore our V30 LED Display Mini Portable Currency Counting Machine, designed for efficient cash handling with UV detection, adjustable speed, and batch counting. Ideal for banks, retail, and financial institutions. Custom OEM solutions available."
+        />
+        <meta name="keywords" content="currency counting machine, cash handling solutions, OEM currency counter, V30 counting machine, portable cash counter, UV sensor counting machine, INR USD EURO counting machine" />
+        <link rel="canonical" href="https://www.myra-digital.com/currency-counting-machine" />
+        <meta property="og:title" content="Currency Counting Machine | High-Speed OEM Solutions for Cash Handling" />
+        <meta
+          property="og:description"
+          content="Explore our V30 LED Display Mini Portable Currency Counting Machine, designed for efficient cash handling with UV detection, adjustable speed, and batch counting. Ideal for banks, retail, and financial institutions. Custom OEM solutions available."
+        />
+        <meta property="og:image" content="https://www.myra-digital.com/img/countingMachine/currencyCounting_hero.png" />
+        <meta property="og:url" content="https://www.myra-digital.com/currency-counting-machine" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Currency Counting Machine | High-Speed OEM Solutions for Cash Handling" />
+        <meta
+          name="twitter:description"
+          content="Explore our V30 LED Display Mini Portable Currency Counting Machine, designed for efficient cash handling with UV detection, adjustable speed, and batch counting. Ideal for banks, retail, and financial institutions. Custom OEM solutions available."
+        />
+        <meta name="twitter:image" content="https://www.myra-digital.com/img/countingMachine/currencyCounting_hero.png" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       {/* Hero Banner Section */}
       <div
         className="relative h-[600px] overflow-hidden cursor-pointer"

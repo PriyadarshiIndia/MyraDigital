@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <h3 className="font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600"> info@myra-digital.com</p>
+                  <p className="text-gray-600">info@company.com</p>
                 </div>
               </div>
 
