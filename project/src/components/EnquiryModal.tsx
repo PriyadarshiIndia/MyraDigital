@@ -40,7 +40,6 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
     try {
       const response = await fetch("https://myra-digital-backend.vercel.app/api/enquiries", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
