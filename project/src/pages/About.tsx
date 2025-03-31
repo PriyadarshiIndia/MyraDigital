@@ -623,7 +623,7 @@ const MyraAboutPage = () => {
               </p>
             </div>
             <div className="w-full max-w-sm space-y-2">
-              <Button size="lg" className="w-full bg-white hover:bg-white/90 border-2 border-white">
+              <Button size="lg" className="w-full bg-white text-[#FF1493] hover:bg-white/90 border-2 border-white">
                 <Phone className="mr-2 h-4 w-4" />
                 Contact Us
               </Button>
