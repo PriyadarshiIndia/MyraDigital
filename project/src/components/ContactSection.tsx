@@ -145,7 +145,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <h3 className="font-semibold text-gray-800">WhatsApp</h3>
-                  <p className="text-gray-600">+123 456 7890</p>
+                  <p className="text-gray-600">+91 9711711185</p>
                 </div>
               </div>
             </div>

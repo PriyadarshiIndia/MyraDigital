@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Slide Components
 const Slide1 = () => (
@@ -24,9 +24,11 @@ const Slide1 = () => (
               Explore Our Catalog
             </button>
           </a>
-          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-            Contact Us
-          </button>
+          <a href="/contact">
+            <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
+              Contact Us
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -55,9 +57,11 @@ const Slide2 = () => (
               Learn About Customization
             </button>
           </a>
-          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-            Contact Us
-          </button>
+          <a href="/contact">
+            <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
+              Contact Us
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -86,9 +90,11 @@ const Slide3 = () => (
               Discover Our Tech
             </button>
           </a>
-          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-            Contact Us
-          </button>
+          <a href="/contact">
+            <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
+              Contact Us
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -117,9 +123,11 @@ const Slide4 = () => (
               View Our Network
             </button>
           </a>
-          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-            Contact Us
-          </button>
+          <a href="/contact">
+            <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
+              Contact Us
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -148,9 +156,11 @@ const Slide5 = () => (
               Start a Partnership
             </button>
           </a>
-          <button className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-            Contact Us
-          </button>
+          <a href="/contact">
+            <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
+              Contact Us
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -165,7 +175,7 @@ export default function HeroSection() {
   const totalSlides = slides.length;
 
   // Navigate to previous or next slide
-  const navigate = (direction : any) => {
+  const navigate = (direction: any) => {
     setCurrentIndex((prev) => {
       if (direction === "next") {
         return (prev + 1) % totalSlides;
