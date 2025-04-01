@@ -613,25 +613,30 @@ const MyraAboutPage = () => {
 
       {/* Contact Section */}
       <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-[#FF1493] text-white">
-        <div className="container px-4 md:px-6 mx-auto max-w-6xl">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us Today</h2>
-              <p className="mx-auto max-w-[700px] text-white/90 md:text-xl">
-                Explore our extensive range of LED and LCD projectors and mobile accessories and discover how we can
-                help your brand achieve its growth goals with high-quality, innovative solutions.
-              </p>
-            </div>
-            <div className="w-full max-w-sm space-y-2">
-              <Button size="lg" className="w-full bg-white text-[#FF1493] hover:bg-white/90 border-2 border-white">
-                <Phone className="mr-2 h-4 w-4" />
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+    <div className="flex flex-col items-center justify-center space-y-6 text-center">
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl drop-shadow-md">
+          Contact Us Today
+        </h2>
+        <p className="mx-auto max-w-[700px] text-white/95 md:text-xl">
+          Explore our extensive range of LED and LCD projectors and mobile accessories and discover how we can
+          help your brand achieve its growth goals with high-quality, innovative solutions.
+        </p>
+      </div>
+      <div className="w-full max-w-sm space-y-2">
+        <Button 
+          size="lg" 
+          className="w-full bg-white text-pink-600 hover:bg-gray-100 font-semibold border-2 border-white transition-colors shadow-lg"
+        >
+          <Phone className="mr-2 h-4 w-4 text-[#FF1493]" />
+          <span className="text-[#FF1493]">Contact Us</span>
+        </Button>
+      </div>
     </div>
+  </div>
+</section>
+</div>
   )
 }
 
