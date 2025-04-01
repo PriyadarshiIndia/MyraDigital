@@ -20,21 +20,21 @@ const FeaturedSection = () => {
 
     return (
         <section className="max-w-7xl py-24 mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1: Neck Band */}
+            {/* Card 1: Projector */}
             <div className="bg-teal-100 p-6 rounded-lg flex flex-col md:flex-row items-center">
                 {/* Text Section */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h3 className="text-sm text-gray-600">NECK BAND</h3>
+                    <h3 className="text-sm text-gray-600">PROJECTOR</h3>
                     <h2 className="text-xl font-semibold mt-2">
-                        Listen to music, whenever you are in the mood!
+                        Experience the best home theater with our HD Projector!
                     </h2>
                     <button
                         onClick={() =>
                             openEnquireModal({
                                 id: 1,
-                                title: "Neck Band",
-                                description: "Listen to music, whenever you are in the mood!",
-                                image: "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1710438216/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/305521_kukn8j.png?tr=w-600",
+                                title: "Projector",
+                                description: "Experience the best home theater with our HD Projector!",
+                                image: "https://example.com/projector-image.jpg",
                             })
                         }
                         className="mt-4 bg-green-700 text-white px-4 py-2 rounded-md"
@@ -45,28 +45,28 @@ const FeaturedSection = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 mt-4 md:mt-0">
                     <img
-                        src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1710438216/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/305521_kukn8j.png?tr=w-600"
-                        alt="Neck Band"
+                        src="img/projectors/hy300_projector.jpg"
+                        alt="Projector"
                         className="w-full h-auto"
                     />
                 </div>
             </div>
 
-            {/* Card 2: Universal Handsfree */}
+            {/* Card 2: Charger */}
             <div className="bg-yellow-100 p-6 rounded-lg flex flex-col md:flex-row items-center">
                 {/* Text Section */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h3 className="text-sm text-gray-600">UNIVERSAL HANDSFREE</h3>
+                    <h3 className="text-sm text-gray-600">CHARGER</h3>
                     <h2 className="text-xl font-semibold mt-2">
-                        Best Voice Quality handsfree for Music Aficionados
+                        Fast Charging Adapter for all your devices!
                     </h2>
                     <button
                         onClick={() =>
                             openEnquireModal({
                                 id: 2,
-                                title: "Universal Handsfree",
-                                description: "Best Voice Quality handsfree for Music Aficionados",
-                                image: "https://www.myg.in/images/thumbnails/300/300/detailed/73/adr-removebg-preview-removebg-preview.png.png",
+                                title: "Charger",
+                                description: "Fast Charging Adapter for all your devices!",
+                                image: "img/chargers/featured_charger.jpg",
                             })
                         }
                         className="mt-4 bg-green-700 text-white px-4 py-2 rounded-md"
@@ -77,8 +77,8 @@ const FeaturedSection = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 mt-4 md:mt-0">
                     <img
-                        src="https://www.myg.in/images/thumbnails/300/300/detailed/73/adr-removebg-preview-removebg-preview.png.png"
-                        alt="Universal Handsfree"
+                        src="img/chargers/featured_charger.jpg"
+                        alt="Charger"
                         className="w-full h-auto"
                     />
                 </div>

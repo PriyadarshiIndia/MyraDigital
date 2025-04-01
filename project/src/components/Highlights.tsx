@@ -1,52 +1,143 @@
-import React from "react";
+import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Highlights = () => {
-  const highlights = [
-    {
-      id: 1,
-      title: "Free Shipping",
-      description: "Enjoy free shipping on orders above $100.",
-      imgLight: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg1.svg",
-      imgDark: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg1dark.svg",
-      alt: "Free Shipping",
-    },
-    {
-      id: 2,
-      title: "24/7 Customer Support",
-      description: "We're here for you anytime at care@support.com.",
-      imgLight: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2.svg",
-      imgDark: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2dark.svg",
-      alt: "24/7 Support",
-    },
-    {
-      id: 3,
-      title: "30-Day Money Back",
-      description: "Shop with confidence! Hassle-free returns.",
-      imgLight: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3.svg",
-      imgDark: "https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3dark.svg",
-      alt: "Money Back Guarantee",
-    },
-  ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const [counts, setCounts] = useState({
+    years: 0,
+    cities: 0,
+    products: 0,
+    clients: 0,
+  });
+
+  const targetValues = {
+    years: 12,
+    cities: 50,
+    products: 100,
+    clients: 500,
+  };
+
+  const animationDuration = 2000; // Total animation duration in ms
+  const frameRate = 60; // Frames per second
+  const totalFrames = (animationDuration / 1000) * frameRate;
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const startTime = Date.now();
+    const endTime = startTime + animationDuration;
+
+    const animateCounts = () => {
+      const now = Date.now();
+      const progress = Math.min(1, (now - startTime) / animationDuration);
+
+      setCounts({
+        years: Math.floor(progress * targetValues.years),
+        cities: Math.floor(progress * targetValues.cities),
+        products: Math.floor(progress * targetValues.products),
+        clients: Math.floor(progress * targetValues.clients),
+      });
+
+      if (now < endTime) {
+        requestAnimationFrame(animateCounts);
+      } else {
+        // Ensure we reach the exact target values
+        setCounts(targetValues);
+      }
+    };
+
+    const animationId = requestAnimationFrame(animateCounts);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [isInView]);
 
   return (
-    <section className="py-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12">
-          {highlights.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center space-x-5 p-6 bg-white dark:bg-pink-500 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="w-16 h-16 flex-shrink-0">
-                <img className="dark:hidden" src={item.imgLight} alt={item.alt} />
-                <img className="hidden dark:block" src={item.imgDark} alt={item.alt} />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-100 mt-2">{item.description}</p>
-              </div>
-            </div>
-          ))}
+    <section className="w-full py-12 md:py-16 bg-white">
+      <div ref={sectionRef} className="container px-4 md:px-6 mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+          {/* Box 1: Years of Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="space-y-2 p-4 md:p-6 border-2 border-[#FF1493] bg-white rounded-lg hover:bg-[#FF1493]/5 transition-colors duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#FF1493]">
+              {counts.years}+
+            </h3>
+            <p className="text-sm md:text-base font-medium text-[#FF1493]">
+              Years of Experience
+            </p>
+          </motion.div>
+
+          {/* Box 2: Cities Served */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-2 p-4 md:p-6 border-2 border-[#FF1493] bg-white rounded-lg hover:bg-[#FF1493]/5 transition-colors duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#FF1493]">
+              {counts.cities}+
+            </h3>
+            <p className="text-sm md:text-base font-medium text-[#FF1493]">
+              Cities Served
+            </p>
+          </motion.div>
+
+          {/* Box 3: Product Variants */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-2 p-4 md:p-6 border-2 border-[#FF1493] bg-white rounded-lg hover:bg-[#FF1493]/5 transition-colors duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#FF1493]">
+              {counts.products}+
+            </h3>
+            <p className="text-sm md:text-base font-medium text-[#FF1493]">
+              Product Variants
+            </p>
+          </motion.div>
+
+          {/* Box 4: Satisfied Clients */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="space-y-2 p-4 md:p-6 border-2 border-[#FF1493] bg-white rounded-lg hover:bg-[#FF1493]/5 transition-colors duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#FF1493]">
+              {counts.clients}+
+            </h3>
+            <p className="text-sm md:text-base font-medium text-[#FF1493]">
+              Satisfied Clients
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
