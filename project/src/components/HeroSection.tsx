@@ -19,11 +19,6 @@ const Slide1 = () => (
           We specialize in crafting high-quality mobile accessories designed to meet the unique needs of OEMs. Elevate your product offerings with our innovative solutions.
         </p>
         <div className="flex gap-4">
-          <a href="/products">
-            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
-              Explore Our Catalog
-            </button>
-          </a>
           <a href="/contact">
             <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
               Contact Us
@@ -52,11 +47,6 @@ const Slide2 = () => (
           From custom-branded chargers to bespoke packaging, we deliver scalable accessory solutions tailored to your business requirements.
         </p>
         <div className="flex gap-4">
-          <a href="/custom-solutions">
-            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
-              Learn About Customization
-            </button>
-          </a>
           <a href="/contact">
             <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
               Contact Us
@@ -85,11 +75,6 @@ const Slide3 = () => (
           Our cutting-edge technology ensures compatibility, durability, and performance. Partner with us to integrate the latest innovations into your lineup.
         </p>
         <div className="flex gap-4">
-          <a href="/technology">
-            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
-              Discover Our Tech
-            </button>
-          </a>
           <a href="/contact">
             <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
               Contact Us
@@ -118,11 +103,6 @@ const Slide4 = () => (
           With manufacturing hubs across the globe and localized support, we ensure timely delivery and exceptional service wherever you operate.
         </p>
         <div className="flex gap-4">
-          <a href="/global-network">
-            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
-              View Our Network
-            </button>
-          </a>
           <a href="/contact">
             <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
               Contact Us
@@ -148,14 +128,9 @@ const Slide5 = () => (
       <div className="max-w-3xl text-white">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">Building Long-Term Partnerships for Success</h1>
         <p className="text-xl md:text-2xl mb-8">
-          More than just suppliers, we are your trusted partners in innovation. Together, let’s create impactful products that drive growth.
+          More than just suppliers, we are your trusted partners in innovation. Together, let's create impactful products that drive growth.
         </p>
         <div className="flex gap-4">
-          <a href="/contact-us">
-            <button className="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-primary-dark transition-colors">
-              Start a Partnership
-            </button>
-          </a>
           <a href="/contact">
             <span className="border border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-block">
               Contact Us

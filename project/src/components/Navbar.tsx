@@ -41,7 +41,7 @@ export default function Navbar() {
     { name: "Chargers", link: "/chargers", submenu: ["20W PD Charger", "25W PD Charger", "25w Type C PD charger", "45w Type C PD charger", "67w PD charger", "80w Type C PD charger"] },
     { name: "Car Chargers", link: "/car-chargers", submenu: ["Coming Soon"], comingSoon: true },
     { name: "Data Cables", link: "/data-cables", submenu: ["C to C Braided Cable", "C to C Cable", "Type C to Lightning Cable", "Dash Cable", "PVC USB to Type C", "Red Braided USB to Lightning Cable"] },
-    { name: "Projectors", link: "/projectors", submenu: ["HY300 Free Style Projector", "Handy Projector", "P6 Projector", "P7 Projector", "Q3 White Projector", "X1 Pro Projector", "X3 Pro Projector", "X4 Projector", "RD828 Projector"] },
+    { name: "Projectors", link: "/projectors", submenu: ["HY300 Projector", "X-1 Pro Projector", "X3 Pro Projector", "X6 Pro Projector", "X9 Gimbal Projector", "X30 Pro Projector", "F1 Smart Projector", "GTV Google TV Projector", "Laser UST01 Projector","CUBE Projector","RD852 Projector", "RD853 Projector"] },
     { name: "Note Counting Machine", link: "/currency-counting-machine", submenu: ["V30 Note Counting Machine"] },
     { name: "Power Banks", link: "/power-banks", submenu: ["Product 1", "Product 2", "Product 3"] },
   ]
@@ -119,11 +119,11 @@ export default function Navbar() {
               <span className="absolute bottom-[-5px] left-0 w-0 h-[2px] bg-pink-500 group-hover:w-full transition-all duration-300"></span>
             </Link>
 
-            <Link to="/products" className="flex items-center space-x-2 group relative">
+            {/* <Link to="/products" className="flex items-center space-x-2 group relative">
               <Package size={20} className="group-hover:text-pink-500 transition-colors" />
               <span className="group-hover:text-pink-500 transition-colors">Products</span>
               <span className="absolute bottom-[-5px] left-0 w-0 h-[2px] bg-pink-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
+            </Link> */}
 
             <Link to="/faq" className="flex items-center space-x-2 group relative">
               <HelpCircle size={20} className="group-hover:text-pink-500 transition-colors" />
@@ -232,9 +232,9 @@ export default function Navbar() {
               <Package size={20} className="inline-block mr-2" /> OEM Solutions
             </Link>
 
-            <Link to="/products" className="block text-gray-700 hover:text-pink-500 transition-colors px-3 py-2">
+            {/* <Link to="/products" className="block text-gray-700 hover:text-pink-500 transition-colors px-3 py-2">
               <Package size={20} className="inline-block mr-2" /> Products
-            </Link>
+            </Link> */}
 
             <Link to="/faq" className="block text-gray-700 hover:text-pink-500 transition-colors px-3 py-2">
               <HelpCircle size={20} className="inline-block mr-2" /> FAQ
