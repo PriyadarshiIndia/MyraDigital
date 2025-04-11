@@ -87,43 +87,43 @@ export default function Footer() {
               Products
             </h2>
             <a
-              href="#"
+              href="/chargers"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Chargers
             </a>
             <a
-              href="#"
+              href="/car-chargers"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Car Chargers
             </a>
             <a
-              href="#"
+              href="/data-cables"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Data Cables
             </a>
             <a
-              href="#"
+              href="/projectors"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Projectors
             </a>
             <a
-              href="#"
+              href="currency-counting-macine"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Note Counting Machine
             </a>
             <a
-              href="#"
+              href="/power-banks"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Power Banks
             </a>
             <a
-              href="#"
+              href="oem"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               OEM Solutions

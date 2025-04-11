@@ -26,11 +26,10 @@ export default function DataCable() {
       description: "Upgrade to durability and fast charging with our USB-C to USB-C Braided Cable, designed for OEMs seeking premium connectivity solutions. Built with high-quality, tangle-free nylon braiding, it ensures superior strength, flexibility, and longevity. Supporting fast charging and high-speed data transfer, it’s perfect for smartphones, tablets, laptops, and other USB-C devices. Engineered for enhanced durability and universal compatibility, it meets global quality standards for seamless OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/c-to-c-braided.jpg",
       specifications: {
-        "Battery Life": "20 hours",
-        Connectivity: "Bluetooth 5.0",
-        Features: "Active noise cancellation, Touch controls",
+        "Length": "1 meter",
+        "Connector type": "C to C",
         Compatibility: "iOS/Android devices",
-        Weight: "250g"
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     },
     {
@@ -39,11 +38,10 @@ export default function DataCable() {
       description: "Our USB-C to USB-C Cable is designed for fast charging and high-speed data transfer, making it the perfect choice for OEMs. Engineered for durability and efficiency, it supports Power Delivery (PD) charging for smartphones, tablets, laptops, and other USB-C devices. With universal compatibility, premium materials, and reinforced connectors, it ensures long-lasting performance. Meets global quality standards for seamless OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/c-to-c.jpg",
       specifications: {
-        Display: "1.5\" OLED",
-        Battery: "7-day续航",
-        Features: "Heart rate monitor, GPS, 5ATM waterproof",
-        Compatibility: "iOS 12+/Android 8+",
-        Weight: "50g"
+        "Length": "1 meter",
+        "Connector type": "C to C",
+        Compatibility: "iOS/Android devices",
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     },
     {
@@ -52,11 +50,10 @@ export default function DataCable() {
       description: "Our USB-C to Lightning Cable is designed for fast charging and high-speed data transfer, making it the ideal choice for OEMs. MFi-certified for seamless Apple device compatibility, it supports Power Delivery (PD) fast charging for iPhones, iPads, and more. Built with premium materials and reinforced connectors, it ensures durability and reliable performance. Meets global quality standards for smooth OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/c-to-i.jpg",
       specifications: {
-        Battery: "15 hours",
-        Connectivity: "Bluetooth 5.2",
-        Features: "IPX7 waterproof, 360° sound",
-        Dimensions: "100mm × 100mm × 50mm",
-        Weight: "450g"
+        "Length": "1 meter",
+        "Connector type": "C to C",
+        Compatibility: "iOS/Android devices",
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     },
     {
@@ -65,11 +62,10 @@ export default function DataCable() {
       description: "Our 4-in-1 Multi Charging Cable is designed for versatility, durability, and fast charging, making it the ideal choice for OEMs. Featuring USB-A & USB-C inputs with Lightning and USB-C outputs, it supports universal compatibility for smartphones, tablets, and other devices. Built with premium materials, reinforced connectors, and a tangle-free design, it ensures long-lasting performance and reliability. Meets global quality standards for seamless OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/four-in-one.jpg",
       specifications: {
-        Battery: "15 hours",
-        Connectivity: "Bluetooth 5.2",
-        Features: "IPX7 waterproof, 360° sound",
-        Dimensions: "100mm × 100mm × 50mm",
-        Weight: "450g"
+        "Length": "1 meter",
+        "Connector type": "C to C",
+        Compatibility: "iOS/Android devices",
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     },
     {
@@ -78,11 +74,10 @@ export default function DataCable() {
       description: "Our USB to Type-C PVC Cable is designed for fast charging and reliable data transfer, making it an excellent choice for OEMs. Crafted with high-quality PVC material, it offers flexibility, durability, and tangle-free usage. Compatible with smartphones, tablets, and other USB-C devices, it ensures efficient power delivery and stable connectivity. Meets global quality standards for seamless OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/pvc-to-typeC-cable.jpg",
       specifications: {
-        Battery: "15 hours",
-        Connectivity: "Bluetooth 5.2",
-        Features: "IPX7 waterproof, 360° sound",
-        Dimensions: "100mm × 100mm × 50mm",
-        Weight: "450g"
+        "Length": "1 meter",
+        "Connector type": "C to C",
+        Compatibility: "iOS/Android devices",
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     },
     {
@@ -91,11 +86,10 @@ export default function DataCable() {
       description: "Our Red Braided USB to Lightning Cable combines style, durability, and fast charging, making it the perfect choice for OEMs. Built with premium nylon braiding, it offers exceptional strength, tangle-free usage, and long-lasting performance. MFi-certified for seamless Apple device compatibility, it supports fast charging and high-speed data transfer for iPhones, iPads, and more. Meets global quality standards for smooth OEM integration. Custom branding and bulk orders available.",
       image: "img/dataCables/red-braided-usb-to-i.jpg",
       specifications: {
-        Battery: "15 hours",
-        Connectivity: "Bluetooth 5.2",
-        Features: "IPX7 waterproof, 360° sound",
-        Dimensions: "100mm × 100mm × 50mm",
-        Weight: "450g"
+        "Length": "1 meter",
+        "Connector type": "C to C",
+        Compatibility: "iOS/Android devices",
+        "Special Features": "Data Transfer, Tangle Free, Lightweight, fast charging"
       }
     }
   ];

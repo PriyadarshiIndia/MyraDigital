@@ -186,9 +186,12 @@ export default function PowerBanks() {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Discover our full range of power banks with advanced features for all your charging needs
           </p>
-          <button className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]">
+          <a
+            href="/contact"
+            className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
+          >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
 

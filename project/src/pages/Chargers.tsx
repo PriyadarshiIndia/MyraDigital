@@ -33,8 +33,8 @@ export default function Chargers() {
       image: "img/chargers/PD-20w-charger.jpg",
       specifications: {
         Input: "100-240V AC, 50/60Hz",
-        Output: "15W Max",
-        Compatibility: "Qi-enabled devices",
+        Output: "20W",
+        Compatibility: "All kind of  devices",
         Features: "Temperature control, Foreign object detection",
         Dimensions: "100mm x 100mm x 10mm",
         Weight: "120g",
@@ -346,12 +346,12 @@ export default function Chargers() {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Contact our team for custom charging solutions tailored to your specific needs.
           </p>
-          <button
-            onClick={handleCTAClick}
+          <a
+            href="/contact"
             className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
           >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
       <EnquiryModal isOpen={isEnquireModalOpen} onClose={closeModals} product={selectedProduct} />
