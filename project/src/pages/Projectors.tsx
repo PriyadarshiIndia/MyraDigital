@@ -106,7 +106,7 @@ export default function Projectors() {
       id: 6,
       title: "X30 Pro Projector",
       description: "The X30 Pro projector delivers 500 ANSI lumens brightness with Full HD 1920x1080 resolution and 4K support, providing crisp and vibrant visuals. Featuring versatile connectivity options including HDMI-2, USB-2, AV, and AUX inputs, this Android-powered projector comes with built-in YouTube, Bluetooth, Miracast, ISO Cast, and WiFi capabilities. With 2GB RAM and 16GB ROM storage, electric focus, and auto keystone correction, it offers convenient operation and excellent performance. The energy-efficient LED lamp lasts up to 50,000 hours, and the projector is backed by a 1-year warranty for peace of mind.",
-      image: "img/projectors/x30-pro.jpg",
+      image: "img/projectors/x30-pro.jpeg",
       specifications: {
         Model: "X30PRO",
         Brightness: "500 ANSI Lumens",
