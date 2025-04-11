@@ -6,7 +6,7 @@ const FeaturedProductSection = () => {
 
   // Function to handle redirection to the product details page
   const handleViewDetails = () => {
-    navigate("/projectors#product-hy300-free-style-projector"); // Replace with your actual product page route
+    navigate("/projectors#product-hy300-projector"); // Replace with your actual product page route
   };
 
   return (

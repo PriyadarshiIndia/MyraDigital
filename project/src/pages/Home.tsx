@@ -9,7 +9,7 @@ import ProductSection from '../components/ProductSection';
 import BannerSection from '../components/BannerSection';
 import Highlights from '../components/Highlights';
 import FeaturedProductSection from '../components/FeaturedProductSection';
-import NewsletterSection from '../components/NewsLetterSection';
+// import NewsletterSection from '../components/NewsLetterSection';
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
@@ -43,7 +43,7 @@ const Home = () => {
         <BannerSection />
         <Highlights />
         <FeaturedProductSection />
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
       </div>
     </>
   );

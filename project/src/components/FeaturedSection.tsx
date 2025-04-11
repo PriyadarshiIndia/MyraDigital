@@ -45,7 +45,7 @@ const FeaturedSection = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 mt-4 md:mt-0">
                     <img
-                        src="img/projectors/hy300_projector.jpg"
+                        src="img/projectors/hy300.jpg"
                         alt="Projector"
                         className="w-full h-auto"
                     />

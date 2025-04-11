@@ -167,6 +167,19 @@ export default function DataCable() {
         </div>
       </div>
 
+      <div className="introduction">
+        <div className="container mx-auto px-4 pt-8">
+          <div className="max-w-7xl mx-auto text-center">
+
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 mb-8 mx-auto rounded-full"></div>
+
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              As a <strong>trusted data cable manufacturer</strong>, we deliver premium connectivity solutions designed to meet the demands of modern devices. Our <strong>high-speed USB cables</strong>, including USB-C, Lightning, and HDMI options, ensure seamless data transfer and charging for smartphones, tablets, laptops, and more. Backed by rigorous quality standards and innovative engineering, our products are perfect for businesses and consumers seeking reliable, future-proof performance.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Products Section */}
       <div className="container mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-16">
@@ -179,9 +192,8 @@ export default function DataCable() {
               <div
                 key={product.id}
                 id={productHash}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                } items-center gap-12`}
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  } items-center gap-12`}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 h-[600px] relative rounded-2xl overflow-hidden group">
@@ -261,7 +273,7 @@ export default function DataCable() {
                 action: 'Clicked Contact Us',
                 label: 'DataCable Page',
               });
-            
+
             }}
             className="px-10 py-4 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-[0_2px_15px_rgba(236,72,153,0.4)]"
           >

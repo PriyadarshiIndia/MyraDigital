@@ -246,6 +246,20 @@ export default function Chargers() {
           </div>
         </div>
       </div>
+
+      <div className="introduction">
+  <div className="container mx-auto px-4 pt-8">
+    <div className="max-w-7xl mx-auto text-center">
+      
+      <div className="h-1 w-24 bg-gradient-to-r from-pink-500 to-fuchsia-500 mb-8 mx-auto rounded-full"></div>
+      
+      <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+        As a <strong>leading charger manufacturer</strong>, we specialize in high-performance PD fast charging solutions for smartphones, tablets, and laptops. Our <strong>USB-C Power Delivery chargers</strong> combine cutting-edge technology, safety certifications, and OEM-ready designs for businesses seeking reliable power solutions.
+      </p>
+      </div>
+    </div>
+  </div>
+
       {/* Products Section */}
       <div className="container mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-16">
