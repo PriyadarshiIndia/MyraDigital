@@ -69,6 +69,9 @@ export default function ContactPage() {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-pink-500 z-0"></div>
 
       <div className="max-w-6xl w-full overflow-hidden border-none rounded-lg shadow-xl bg-white z-10 relative">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 text-center md:text-left relative px-6 pt-4  after:content-[''] after:absolute after:top-20 after:left-6 after:w-28 after:h-1 after:bg-pink-500">
+        Myra Digital India pvt Ltd
+      </h1>
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Side: Company Info and Map */}
           <div className="p-8 bg-white animate-fadeIn">

@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useRef, useState } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
 import {
@@ -630,7 +629,7 @@ const MyraAboutPage = () => {
           className="w-full bg-white text-pink-600 hover:bg-gray-100 font-semibold border-2 border-white transition-colors shadow-lg"
         >
           <Phone className="mr-2 h-4 w-4 text-[#FF1493]" />
-          <span className="text-[#FF1493]">Contact Us</span>
+          <a href="/contact"><span className="text-[#FF1493]">Contact Us</span></a>
         </Button>
       </div>
     </div>

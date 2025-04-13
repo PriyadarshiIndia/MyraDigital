@@ -56,25 +56,25 @@ export default function Footer() {
           <div className="flex flex-col">
             <h2 className="text-base font-semibold leading-4 text-dark">Company</h2>
             <a
-              href="#"
+              href="/"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark cursor-pointer"
             >
               Home
             </a>
             <a
-              href="#"
+              href="/about"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark cursor-pointer"
             >
               About Us
             </a>
             <a
-              href="#"
+              href="/contact"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark cursor-pointer"
             >
               Contact
             </a>
             <a
-              href="#"
+              href="/faq"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-dark cursor-pointer"
             >
               FAQ
@@ -111,7 +111,7 @@ export default function Footer() {
               Projectors
             </a>
             <a
-              href="currency-counting-macine"
+              href="currency-counting-machine"
               className="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-dark cursor-pointer"
             >
               Note Counting Machine
