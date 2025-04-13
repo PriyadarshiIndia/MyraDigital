@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /myra-admin
+Sitemap: https://www.myra-digital.com/sitemap.xml
