@@ -249,9 +249,9 @@ export default function ContactPage() {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 transition-all duration-200"
                   >
                     <option value="">Select a subject</option>
-                    <option value="support">Support</option>
-                    <option value="sales">Sales</option>
-                    <option value="feedback">Feedback</option>
+                    <option value="support">Projectors</option>
+                    <option value="sales">Charging Solution</option>
+                    <option value="feedback">OEM</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

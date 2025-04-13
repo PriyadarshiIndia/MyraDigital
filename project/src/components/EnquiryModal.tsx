@@ -38,7 +38,7 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
     setSubmitError("");
 
     try {
-      const response = await fetch("https://myra-digital-backend.vercel.app/api/enquiries", {
+      const response = await fetch("http://localhost:5000/api/enquiries", { // Update this to your backend URL
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,11 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to submit enquiry");
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to submit enquiry");
+      }
 
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
@@ -61,9 +65,9 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
         onClose();
         setSubmitSuccess(false);
       }, 2000);
-    } catch (error) {
+    } catch (error:any) {
       console.error("Error submitting form:", error);
-      setSubmitError("Failed to submit your enquiry. Please try again.");
+      setSubmitError(error.message || "Failed to submit your enquiry. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
