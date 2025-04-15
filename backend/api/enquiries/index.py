@@ -45,7 +45,7 @@ def handle_enquiry():
             return jsonify({"error": "Missing required fields"}), 400
         
         # Prepare email content
-        recipient = "davfolio.participant@gmail.com"
+        recipient = "info@myra-digital.com"
         subject = f"New Enquiry for {data['product_title']}"
         body = f"""
         New product enquiry received:
