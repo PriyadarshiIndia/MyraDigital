@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"; // If using React Router
 import EnquiryModal from "../components/EnquiryModal"; // Import the reusable EnquiryModal
 
+interface Specification {
+  [key: string]: string;
+}
+
 interface Product {
   id: number;
   title: string;
   image: string;
   description: string;
+  specifications?: Specification; // Make specifications optional to match both use cases
 }
 
 const products: Product[] = [
@@ -15,26 +20,59 @@ const products: Product[] = [
     title: "25W PD Charger",
     image: "img/chargers/PD-25w-charger.jpg",
     description: "High-quality product with advanced features",
+    specifications: {
+      "Output": "25W",
+      "Port Type": "USB-C",
+      "Compatibility": "PD compatible devices",
+      "Features": "Fast charging, compact design"
+    }
   },
   {
     id: 2,
     title: "C to C braided Cable",
     image: "img/dataCables/c-to-c-braided.jpg",
     description: "Premium product with warranty",
+    specifications: {
+      "Length": "1 meter",
+      "Connector type": "C to C",
+      "Compatibility": "USB-C devices",
+      "Features": "Data Transfer, Fast charging, Durable"
+    }
   },
   {
     id: 3,
     title: "20W PD charger",
     image: "img/chargers/PD-20w-charger.jpg",
     description: "Eco-friendly and durable",
+    specifications: {
+      "Output": "20W",
+      "Port Type": "USB-C",
+      "Compatibility": "PD compatible devices",
+      "Features": "Fast charging, compact design"
+    }
   },
   {
     id: 4,
-    title: "HY300 Free Style Projector",
+    title: "Projectors",
     image: "img/projectors/hy300.jpg",
     description: "Modern design with smart features",
+    specifications: {
+      "Resolution": "1080p",
+      "Brightness": "3000 lumens",
+      "Features": "Smart TV, WiFi, Bluetooth"
+    }
   },
-  // Add more products here if needed
+  {
+    id: 5,
+    title: "Currency Counting Machine",
+    image: "img/countingMachine/v30.jpeg",
+    description: "Modern design with smart features",
+    specifications: {
+      "Counting Speed": "1000 notes/min",
+      "Detection": "UV, MG, IR",
+      "Features": "Batch counting, counterfeit detection"
+    }
+  },
 ];
 
 const ProductSection = () => {
@@ -72,12 +110,13 @@ const ProductSection = () => {
               />
               <div className="p-4 bg-white">
                 <h3 className="text-xl font-semibold">{product.title}</h3>
+                <p className="text-gray-600 mt-2 line-clamp-2">{product.description}</p>
               </div>
 
               {/* Hover Actions */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
-                  to={`/product/${product.id}`} // Redirect to a dynamic product page
+                  to={`/product/${product.id}`}
                   className="bg-white text-gray-800 px-6 py-2 rounded-lg mr-2 hover:bg-gray-100 transition-colors duration-300"
                 >
                   Details
@@ -93,21 +132,12 @@ const ProductSection = () => {
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="flex justify-center mb-12">
-          <button className="bg-pink-600 text-white px-8 py-3 rounded-lg hover:bg-pink-700 transition-colors duration-300">
-            View All Products
-          </button>
-        </div>
-
         {/* Enquiry Modal */}
-        {isEnquireModalOpen && selectedProduct && (
-          <EnquiryModal
-            isOpen={isEnquireModalOpen}
-            onClose={closeModals}
-            product={selectedProduct}
-          />
-        )}
+        <EnquiryModal
+          isOpen={isEnquireModalOpen}
+          onClose={closeModals}
+          product={selectedProduct}
+        />
       </div>
     </section>
   );
