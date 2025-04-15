@@ -47,7 +47,7 @@ const CompanySection = () => {
       <div className="w-full md:w-3/4 text-center md:text-left">
         <p className="text-sm text-pink-400 uppercase font-medium tracking-wider">Welcome to Myra Digital India</p>
         <h2 className="text-3xl md:text-4xl font-bold mt-2 text-gray-800">
-        India’s Leading Importer and OEM Provider for {" "}
+          India’s Leading Importer and OEM Provider for {" "}
           <span className="text-pink-500 relative">
             {displayText}
             <span
@@ -62,9 +62,14 @@ const CompanySection = () => {
           We serve corporate offices, educational institutions, entertainment, and home theater sectors nationwide.
           Our expertise extends to manufacturing premium mobile accessories, ensuring cutting-edge technology and durability.
         </p>
-        <button className="mt-6 bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:scale-105 font-medium">
+        <a
+          href="/Myra_Projectors_Catalouge.pdf"
+          download
+          className="inline-block mt-6 bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:scale-105 font-medium"
+        >
           Download Catalogue
-        </button>
+        </a>
+
       </div>
     </section>
   );
