@@ -86,9 +86,9 @@ const AboutHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative h-[400px] overflow-hidden rounded-xl"
+            className="relative h-[400px] overflow-hidden mt-10 rounded-xl"
           >
-            <img src="https://placehold.co/1200x800" alt="Myra Digital India" className="object-cover w-full h-full" />
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOjO02zH2tUsTpme5bhRPUIfHv1T1a8q6WvOCvw=s1360-w1360-h1020" alt="Myra Digital India" className="object-cover w-full h-full" />
           </motion.div>
         </div>
       </div>
@@ -98,31 +98,36 @@ const AboutHero = () => {
 
 // Product Showcase Component
 const ProductShowcase = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const products = [
     {
       title: "High-lumen LED Projectors",
       description: "Bright, vibrant, and sharp visuals in various lighting conditions.",
+      image: "/img/projectors/x3-pro.jpeg",
     },
     {
       title: "Portable Projectors",
       description: "For on-the-go presentations and home entertainment.",
+      image: "/img/projectors/hy300.jpg ",
     },
     {
       title: "Short-throw Projectors",
       description: "Ideal for confined spaces without compromising image quality.",
+      image: "/img/projectors/laser_ust01.jpg",
     },
     {
       title: "Smart Projectors",
       description: "With wireless connectivity, app integration, and smart controls.",
+      image: "/img/projectors/gtv.jpg",
     },
     {
       title: "4K Ultra HD Projectors",
       description: "Offering crystal-clear resolution and a cinema-like viewing experience.",
+      image: "/img/projectors/x30-pro.jpeg",
     },
-  ]
+  ];
 
   return (
     <section className="w-full py-16 md:py-24 lg:py-32 bg-white">
@@ -150,7 +155,11 @@ const ProductShowcase = () => {
               className="flex flex-col overflow-hidden rounded-xl bg-white border border-[#FFD1E8] shadow-sm transition-all hover:shadow-lg hover:border-[#FF69B4]"
             >
               <div className="relative h-48">
-                <img src="https://placehold.co/600x400" alt={product.title} className="object-cover w-full h-full" />
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="flex flex-col justify-between p-6">
                 <div>
@@ -166,8 +175,9 @@ const ProductShowcase = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
 
 // Facility Showcase Component
 const FacilityShowcase = () => {
@@ -505,7 +515,7 @@ const MyraAboutPage = () => {
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-xl">
               <img
-                src="https://placehold.co/1200x800"
+                src="/img/about-1.jpg"
                 alt="Myra Digital India Office"
                 className="object-cover w-full h-full"
               />
@@ -522,7 +532,7 @@ const MyraAboutPage = () => {
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="relative h-[400px] overflow-hidden rounded-xl order-2 lg:order-1">
-              <img src="https://placehold.co/1200x800" alt="OEM Solutions" className="object-cover w-full h-full" />
+              <img src="/img/about-2.jpg" alt="OEM Solutions" className="object-cover w-full h-full" />
             </div>
             <div className="space-y-4 order-1 lg:order-2">
               <div className="inline-block rounded-lg bg-[#FFD1E8] px-3 py-1 text-sm text-[#FF1493]">Customization</div>

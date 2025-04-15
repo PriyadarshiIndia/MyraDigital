@@ -48,10 +48,11 @@ export default function AboutHero() {
             className="relative h-[400px] overflow-hidden rounded-xl"
           >
             <img
-              src="/placeholder.svg?height=800&width=1200"
+              src="/img/slide_5.jpg"
               alt="Myra Digital India"
               className="object-cover w-full h-full"
             />
+
           </motion.div>
         </div>
       </div>
